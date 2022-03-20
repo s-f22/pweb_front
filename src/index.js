@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Home_Vitrine from './Pages/Home_Vitrine';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Home_Vitrine />
   </React.StrictMode>,
   document.getElementById('root')
 );

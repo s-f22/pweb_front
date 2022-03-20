@@ -1,0 +1,138 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: var(--fonte);
+}
+
+:root{
+  /* VARIAVEIS */
+  --raios: 5px;
+  --cor_texto: var(--Branco);
+  --fonte: 'Montserrat', sans-serif;
+  --tamanhoFonte: 1.2rem;
+  --larguraMaxPg: 1200px;
+  
+  /* CORES */
+  --A: #211E21;
+  --B: #6D646E;
+  --C: #39243B;
+  --D: #670D70;
+  --E: #B9A9BA;
+  --Branco: white;
+}
+
+/* ------------------------------------------------------------------------------ */
+
+
+.Cabecalho_WidthTotal{
+  background-color: var(--A);
+}
+.Cabecalho_MaxWidht{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  /* padding: 10px 100px 10px 100px; */
+  /* background-color: aqua; */
+  max-width: var(--larguraMaxPg);
+  margin: 0 auto;
+}
+
+
+.d-flex {
+  width: 60%;
+}
+
+.CardsWrap{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.cardPreco{
+  display: flex;
+  justify-content: space-between;
+  align-items: first baseline;
+  font-size: 1.1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
