@@ -18,20 +18,54 @@ function MyVerticallyCenteredModal(props) {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          Por favor, insira seus dados abaixo e cadastre-se agora! 
-          <br/>É grátis =P
+          É grátis e rápido =P
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <h4>Centered Modal</h4>
-        <p>
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-          consectetur ac, vestibulum at eros.
-        </p>
+        <h4>Informe seus dados abaixo:</h4>
+        <Form>
+          <Form.Group className="mb-3" controlId="formBasicNome">
+            <Form.Label>Nome</Form.Label>
+            <Form.Control type="name" placeholder="Insira seu nome completo" />
+
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicCPF">
+            <Form.Label>CPF</Form.Label>
+            <Form.Control type="name" placeholder="(somente numeros)" />
+
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Email</Form.Label>
+            <Form.Control type="email" placeholder="Insira seu endereço de email" />
+            <Form.Text className="text-muted">
+              (Não compartilhamos seus dados).
+            </Form.Text>
+          </Form.Group>
+
+          <Row>
+            <Col>
+              <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Label>Senha</Form.Label>
+                <Form.Control type="password" placeholder="(Mínimo de 8 caracteres)" />
+              </Form.Group>
+            </Col>
+            <Col>
+              <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Label>Confirmação</Form.Label>
+                <Form.Control type="password" placeholder="Redigite a senha" />
+              </Form.Group>
+            </Col>
+          </Row>
+          <Form.Group className="mb-3" controlId="formBasicCheckbox">
+            <Form.Check type="checkbox" label="Desejo receber promoções via email" />
+          </Form.Group>
+          <Button variant="primary" type="submit">
+            Cadastrar
+          </Button>
+        </Form>
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
+        <Button onClick={props.onHide}>Fechar</Button>
       </Modal.Footer>
     </Modal>
   );
@@ -70,10 +104,10 @@ function Cadastro_Usuario() {
 
           <Col className='Cadastro_Usuario_Col_2'>
             <div className='Cadastro_Usuario_NaoTenho'>
-              <h2>Ainda não tenho cadastro</h2>
+              <h2>Ainda não tem cadastro?</h2>
               <>
                 <Button variant="primary" onClick={() => setModalShow(true)}>
-                  Launch vertically centered modal
+                  Clique aqui e faça o seu agora!
                 </Button>
 
                 <MyVerticallyCenteredModal
