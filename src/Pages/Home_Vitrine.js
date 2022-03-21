@@ -1,16 +1,18 @@
 
+
 import '../Assets/css/estilos.css';
 import BoxCards from '../Components/BoxCards';
 import Cabecalho from '../Components/Cabecalho';
-import Menu from '../Components/Menu';
+import MenuCentral from '../Components/MenuCentral';
 
 
 function Home_Vitrine() {
   return (
     <div>
-      <Cabecalho />
-      <Menu />
+      <Cabecalho/>
+      <MenuCentral />
       <BoxCards />
+      
     </div>
   );
 }

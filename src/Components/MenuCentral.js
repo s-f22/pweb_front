@@ -1,11 +1,11 @@
 
 import '../Assets/css/estilos.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Navbar, Nav, Container, Button } from 'react-bootstrap';
+import { Navbar, Nav, Container } from 'react-bootstrap';
 
-function Menu() {
+function MenuCentral() {
     return (
-        <Navbar  bg="light" variant="light" expand="lg">
+        <Navbar  className="corretorHeader" bg="light" variant="light" expand="lg">
             <Container className='justify-content-center'>
                 <Nav  >
                     <Nav.Item>
@@ -29,4 +29,4 @@ function Menu() {
     );
 }
 
-export default Menu;
+export default MenuCentral;
