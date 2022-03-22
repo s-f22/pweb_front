@@ -2,6 +2,7 @@ import krmz from '../Assets/img/krmz.jpg'
 import '../Assets/css/estilos.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Row, Container, Button, Card, CardGroup } from 'react-bootstrap';
+import { Link } from "react-router-dom";
 
 function BoxCards() {
     return (
@@ -9,7 +10,7 @@ function BoxCards() {
             <Container className='CardsWrap'  >
 
                 <Card style={{ "width": '12rem'}}>
-                    <a href=""><Card.Img variant="top" src={krmz} /></a>
+                <Link to="/detalhe_produto"><Card.Img variant="top" src={krmz} /></Link>
                     <Card.Body>
                         <Card.Title>Card Title</Card.Title>
                         <Card.Text>

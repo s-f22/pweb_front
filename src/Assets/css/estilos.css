@@ -27,11 +27,15 @@
 
 
 
-
+/* ------- HEADER ----------- */
 
 .d-flex {
   width: 60%;
 }
+
+
+/* ------- BOXCARDS ----------- */
+
 
 .CardsWrap{
   display: flex;
@@ -51,7 +55,7 @@
 }
 
 
-
+/* ------- CADASTRO USUARIO ----------- */
 
 
 .row button{
@@ -83,7 +87,7 @@
 
 
 
-
+/* ------- DETALHE PRODUTO ----------- */
 
 
 
