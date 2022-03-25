@@ -11,6 +11,7 @@ import './index.css';
 import Cadastro_Usuario from './Pages/Cadastro_Usuario';
 import Home_Vitrine from './Pages/Home_Vitrine';
 import DetalheProduto from './Pages/DetalheProduto';
+import CarrinhoCompras from './Pages/CarrinhoCompras';
 
 import reportWebVitals from './reportWebVitals';
 
@@ -23,6 +24,7 @@ render(
       <Route path="/" element={<Home_Vitrine />} />
       <Route path="cadastro_usuario" element={<Cadastro_Usuario />} />
       <Route path="detalhe_produto" element={<DetalheProduto />} />
+      <Route path="carrinho_compras" element={<CarrinhoCompras />} />
     </Routes>
   </BrowserRouter>,
   rootElement

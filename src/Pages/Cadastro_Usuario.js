@@ -75,7 +75,14 @@ function MyVerticallyCenteredModal(props) {
 
 function Cadastro_Usuario() {
 
+  // Modal Cadastrar novo usuario
   const [modalShow, setModalShow] = React.useState(false);
+
+  // Modal Esquici minha senha
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   return (
     <div>
@@ -97,9 +104,39 @@ function Cadastro_Usuario() {
             <FloatingLabel controlId="floatingPassword" label="Password">
               <Form.Control type="password" placeholder="Password" />
             </FloatingLabel>
-            <Button variant="primary" type="submit">
-              Submit
-            </Button>
+            <div className='CadastroUsuario_BotoesEsq'>
+              <Button variant="primary" type="submit">
+                Entar
+              </Button>
+
+              <>
+                <Button variant="primary" onClick={handleShow}>
+                  Esqueci minha senha
+                </Button>
+
+                <Modal show={show} onHide={handleClose}>
+                  <Modal.Header closeButton>
+                    <Modal.Title>Enviar uma nova senha para:</Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body><FloatingLabel
+                    controlId="floatingInput"
+                    label="Digite seu email"
+                    className="mb-3"
+                  >
+                    <Form.Control type="email" placeholder="name@example.com" />
+                  </FloatingLabel></Modal.Body>
+                  <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose}>
+                      Fechar
+                    </Button>
+                    <Button variant="primary" onClick={handleClose}>
+                      Enviar
+                    </Button>
+                  </Modal.Footer>
+                </Modal>
+              </>
+
+            </div>
           </Col>
 
           <Col className='Cadastro_Usuario_Col_2'>
