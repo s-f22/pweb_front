@@ -9,120 +9,79 @@ function BoxCards() {
         <CardGroup expand="lg">
             <Container className='CardsWrap'  >
 
-                <Card style={{ "width": '12rem'}}>
-                <Link to="/detalhe_produto"><Card.Img variant="top" src={krmz} /></Link>
+                <Card style={{ "width": '12rem' }}>
+                    <Link to="/detalhe_produto"><Card.Img variant="top" src={krmz} /></Link>
                     <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
+                        <p>R$0,00</p>
+                        <Card.Title>Nome do livro</Card.Title>
                         <Card.Text>
-                        Some quick example text to build on the card title and make up the bulk of
-                            the card's content.
+                            Nome do Autor
                         </Card.Text>
-                        <div className='cardPreco'>
-                            <Button variant="primary">Comprar</Button>
-                            <p>R$0,00</p>
-                        </div>
                     </Card.Body>
                 </Card>
-                <Card style={{ "width": '12rem'}}>
-                    <a href=""><Card.Img variant="top" src={krmz} /></a>
+                <Card style={{ "width": '12rem' }}>
+                    <Link to="/detalhe_produto"><Card.Img variant="top" src={krmz} /></Link>
                     <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
+                        <p>R$0,00</p>
+                        <Card.Title>Nome do livro</Card.Title>
                         <Card.Text>
-                        Some quick example text to build on the card title and make up the bulk of
-                            the card's content.
+                            Nome do Autor
                         </Card.Text>
-                        <div className='cardPreco'>
-                            <Button variant="primary">Comprar</Button>
-                            <p>R$0,00</p>
-                        </div>
                     </Card.Body>
                 </Card>
-                <Card style={{ "width": '12rem'}}>
-                    <a href=""><Card.Img variant="top" src={krmz} /></a>
+                <Card style={{ "width": '12rem' }}>
+                    <Link to="/detalhe_produto"><Card.Img variant="top" src={krmz} /></Link>
                     <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
+                        <p>R$0,00</p>
+                        <Card.Title>Nome do livro</Card.Title>
                         <Card.Text>
-                        Some quick example text to build on the card title and make up the bulk of
-                            the card's content.
+                            Nome do Autor
                         </Card.Text>
-                        <div className='cardPreco'>
-                            <Button variant="primary">Comprar</Button>
-                            <p>R$0,00</p>
-                        </div>
                     </Card.Body>
                 </Card>
-                <Card style={{ "width": '12rem'}}>
-                    <a href=""><Card.Img variant="top" src={krmz} /></a>
+                <Card style={{ "width": '12rem' }}>
+                    <Link to="/detalhe_produto"><Card.Img variant="top" src={krmz} /></Link>
                     <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
+                        <p>R$0,00</p>
+                        <Card.Title>Nome do livro</Card.Title>
                         <Card.Text>
-                        Some quick example text to build on the card title and make up the bulk of
-                            the card's content.
+                            Nome do Autor
                         </Card.Text>
-                        <div className='cardPreco'>
-                            <Button variant="primary">Comprar</Button>
-                            <p>R$0,00</p>
-                        </div>
                     </Card.Body>
                 </Card>
-                <Card style={{ "width": '12rem'}}>
-                    <a href=""><Card.Img variant="top" src={krmz} /></a>
+                <Card style={{ "width": '12rem' }}>
+                    <Link to="/detalhe_produto"><Card.Img variant="top" src={krmz} /></Link>
                     <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
+                        <p>R$0,00</p>
+                        <Card.Title>Nome do livro</Card.Title>
                         <Card.Text>
-                        Some quick example text to build on the card title and make up the bulk of
-                            the card's content.
+                            Nome do Autor
                         </Card.Text>
-                        <div className='cardPreco'>
-                            <Button variant="primary">Comprar</Button>
-                            <p>R$0,00</p>
-                        </div>
                     </Card.Body>
                 </Card>
-                <Card style={{ "width": '12rem'}}>
-                    <a href=""><Card.Img variant="top" src={krmz} /></a>
+                <Card style={{ "width": '12rem' }}>
+                    <Link to="/detalhe_produto"><Card.Img variant="top" src={krmz} /></Link>
                     <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
+                        <p>R$0,00</p>
+                        <Card.Title>Nome do livro</Card.Title>
                         <Card.Text>
-                        Some quick example text to build on the card title and make up the bulk of
-                            the card's content.
+                            Nome do Autor
                         </Card.Text>
-                        <div className='cardPreco'>
-                            <Button variant="primary">Comprar</Button>
-                            <p>R$0,00</p>
-                        </div>
                     </Card.Body>
                 </Card>
-                <Card style={{ "width": '12rem'}}>
-                    <a href=""><Card.Img variant="top" src={krmz} /></a>
+                <Card style={{ "width": '12rem' }}>
+                    <Link to="/detalhe_produto"><Card.Img variant="top" src={krmz} /></Link>
                     <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
+                        <p>R$0,00</p>
+                        <Card.Title>Nome do livro</Card.Title>
                         <Card.Text>
-                        Some quick example text to build on the card title and make up the bulk of
-                            the card's content.
+                            Nome do Autor
                         </Card.Text>
-                        <div className='cardPreco'>
-                            <Button variant="primary">Comprar</Button>
-                            <p>R$0,00</p>
-                        </div>
                     </Card.Body>
                 </Card>
-                <Card style={{ "width": '12rem'}}>
-                    <a href=""><Card.Img variant="top" src={krmz} /></a>
-                    <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                        <Card.Text>
-                        Some quick example text to build on the card title and make up the bulk of
-                            the card's content.
-                        </Card.Text>
-                        <div className='cardPreco'>
-                            <Button variant="primary">Comprar</Button>
-                            <p>R$0,00</p>
-                        </div>
-                    </Card.Body>
-                </Card>
-                
-                
+
+
+
             </Container>
         </CardGroup>
     );
