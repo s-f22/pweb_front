@@ -1,54 +1,54 @@
 import { Link } from "react-router-dom";
 
-import logo from '../Assets/img/logo.png'
+import logo from '../Assets/img/Books-logos/Books-logos_transparent.png'
+import { toggleMenu } from '../Assets/js/dinamics.js'
 import cart from '../Assets/img/cart.svg'
 import user from '../Assets/img/user.svg'
+import locale from '../Assets/img/locale.svg'
 import '../Assets/css/estilos.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Form, FormControl, Button, NavDropdown, Navbar, Nav, Container } from 'react-bootstrap';
+import { Form, FormControl, NavDropdown, Navbar, Nav, Container } from 'react-bootstrap';
 
 function Cabecalho() {
+
+    const btnMobile = document.getElementById('btn_mobile');
+
     return (
-        <Navbar fixed="top" bg="light" expand="md">
-            <Container>
-                <Navbar.Brand>
-                    <Link to="/">
-                        <img style={{ height: '100px' }} src={logo}></img>
-                    </Link>
-                </Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                    {/* hide options */}
-                    <Nav className="me-auto align-items-center">
-                        <Nav.Link>
-                            <Link to="/carrinho_compras">
-                                <img style={{ height: '35px' }} src={cart}></img>
-                            </Link>
-                        </Nav.Link>
-                        <NavDropdown title={<img style={{ height: '35px' }} src={user}></img>} id="basic-nav-dropdown">
-                            <NavDropdown.Item ><Link to="/cadastro_usuario">Cadastrar Usuario</Link></NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">Meus Pedidos</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-                        </NavDropdown>
 
-                    </Nav>
-                    <Form className="d-flex">
-                        <FormControl
-                            type="search"
-                            placeholder="Search"
-                            className="me-2"
-                            aria-label="Search"
-                        />
-                        <Button variant="outline-success">Search</Button>
-                    </Form>
-                </Navbar.Collapse>
+        // <Container navbar>
 
-            </Container>
-        </Navbar>
-
-
+        <header id="header">
+            <Link to="/"> <img id="logo" src={logo} alt="" /> </Link>
+            <Form className="d-flex Cabecalho_HeaderBusca">
+                <FormControl
+                    type="search"
+                    placeholder="Digite o nome do livro, ou autor"
+                    className="me-2"
+                    aria-label="Search"
+                />
+                <button id="Cabecalho_BotaoHover" className="Cabecalho_Botao">Pesquisar</button>
+            </Form>
+            <div className="Cabecalho_IconsDiv">
+                <NavDropdown  title={<img className="Cabecalho_SVG" src={locale}></img>} id="basic-nav-dropdown">
+                    <NavDropdown.Item className="Cabecalho_MenuSuspenso" ><Link to="/cadastro_usuario">Nossa loja</Link></NavDropdown.Item>
+                    <NavDropdown.Divider />
+                    <NavDropdown.Item href="#action/3.2">Ver no mapa</NavDropdown.Item>
+                </NavDropdown>
+                <nav className="Cabecalho_Nav" id="nav">
+                    <button onClick={() => toggleMenu()} id="btn_mobile">Menu
+                        <span id="hamburger"></span>
+                    </button>
+                    <ul className="Cabecalho_Corretor" id="menu">
+                        <div className="Cabecalho_Links">
+                            <li><Link to="/carrinho_compras">Pedido<img className="Cabecalho_SVG" src={cart}></img></Link></li>
+                            
+                            <li><Link to="/cadastro_usuario">Minha conta<img className="Cabecalho_SVG" src={user}></img></Link></li>
+                        </div>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        // </Container>
 
     );
 }

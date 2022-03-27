@@ -15,34 +15,253 @@
   --larguraMaxPg: 1200px;
   
   /* CORES */
-  --A: #211E21;
-  --B: #6D646E;
-  --C: #39243B;
-  --D: #670D70;
-  --E: #B9A9BA;
+  --A: #fe6338;
+  --B: #faf9f7;
+  --C: #dba36e;
+  --D: #0a728f;
+  --E: #bccbcf;
+  --F: #79d6f0;
   --Branco: white;
 }
 
 /* ------------------------------------------------------------------------------ */
 
+.HomeVitrine_Container{
+  display: flex;
+  justify-content: center;
+  height: 300px;
+}
+
+.Home_Vitrine_ImagCarousel{
+  display: flex;
+  justify-content: center;
+  height: 300px;
+}
+.carousel {
+  display: flex;
+  justify-content: center;
+  width:300px;
+  height:300px;
+}
+
 
 
 /* ------- HEADER ----------- */
 
-.d-flex {
-  width: 60%;
+#header a {
+  color: white;
+  text-decoration: none;
+  font-family: sans-serif;
 }
 
-.Cabecalho_Menu_Hide{
+#header a:hover {
+  background: var(--F);
+}
+
+#header #logo{
+  height: 90px;
+  border-radius: var(--raios);
+}
+
+/* border box desconsidera margins e paddings nos tamanhos de altura e comprimento */
+#header {
+  box-sizing: border-box; 
+  height: 70px;
+  padding: 3rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--E);
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 99;
+}
+
+.Cabecalho_HeaderBusca{
+  /* display: flex; */
+  width: 40%;
+  align-items: center;
+}
+.Cabecalho_HeaderBusca input{
+  /* height: 2rem; */
+  width: 100%;
+  align-items: center;
+}
+.Cabecalho_IconsDiv{
   display: flex;
 }
-.navbar-nav Cabecalho_Icones_Flex{
+.Cabecalho_Links{
   display: flex;
   flex-direction: row;
-  padding-left: 0;
-  margin-bottom: 0;
-  list-style: none;
+  width: 100%;
+  font-weight: bolder;
 }
+
+.Cabecalho_IconsDiv{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.dropdown-menu{
+  background-color: var(--E) !important
+}
+.form-control{
+  background-color: rgba(250, 249, 247, 0.5) !important;
+}
+.Cabecalho_Botao{
+  background-color: var(--A);
+  padding: .5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  color: #d7f2f9;
+}
+#Cabecalho_BotaoHover :hover{
+  background-color: var(--F) !important;
+}
+
+.Cabecalho_Nav{
+  display: flex;
+  align-items: center;
+  width: fit-content;
+}
+
+.Cabecalho_SVG{
+  margin-left: .5rem;
+  height: 2rem;
+  filter: invert(31%) sepia(91%) saturate(524%) hue-rotate(149deg) brightness(96%) contrast(94%);
+}
+.Cabecalho_Corretor{
+  padding-left: 0;
+}
+
+#header #nav #menu {
+  /* display: flex; */
+  list-style: none;
+  /* gap: .5rem; */
+  /* justify-content: space-between; */
+  margin-bottom: 0;
+}
+
+#header #nav #menu a {
+  display: block;
+  padding: .5rem;
+}
+
+#btn_mobile{
+  display: none;
+}
+
+/* para tudo que for abaixo de 720px, aplicar: */
+@media (max-width: 720px) {
+  
+  #menu {
+      display: block;
+      position: absolute;
+      width: 100%;
+      top: 96px;
+      right: 0px;
+      background: var(--E);
+      z-index: 10;
+      height: 0px;
+      transition: .6s;
+      visibility: hidden;
+      overflow-y: hidden;
+  }
+
+  /* quando #nav tiver a classe "active", eu quero falar com #menu; overflow auto só serve para, em caso de a lista possuir muitos itens, uma barra de scroll é adicionada automaticamente para que sejam visiveis */
+  #header #nav.active #menu {
+      /* height: calc(100vh - 70px); */
+      height: 200px;
+      visibility: visible;
+      border-bottom: solid 1px bl;
+      /* overflow-y: auto; */
+  }
+
+  #header #nav.active .Cabecalho_Links{
+      flex-direction: column;
+      /* justify-content: center; */
+  }
+
+  #header #nav #menu a {
+      padding: 1rem 0;
+      margin: 0 1rem;
+      border-bottom: 2px solid rgba(0, 0, 0, .2);
+  }
+
+  #header #nav #btn_mobile {
+      display: flex;
+      padding: .5rem 1rem;
+      font-size: 1rem;
+      border: none;
+      background: none;
+      cursor: pointer;
+      gap: .5rem;
+      align-items: center;
+  }
+
+  #header #nav #hamburger {
+      border-top: 2px solid;
+      width: 20px;
+  }
+
+  #header #nav #hamburger::after, #hamburger::before {
+      content: '';
+      width: 20px;
+      height: 2px;
+      background: currentColor;
+      display: block;
+      margin-top: 5px;
+      transition: .3s;
+      position: relative;
+  }
+
+  #header #nav.active #hamburger {
+      border-top: transparent;
+  }
+
+  #header #nav.active #hamburger::before {
+      transform: rotate(135deg);
+      top: 5px;
+  }
+
+  #header #nav.active #hamburger::after {
+      transform: rotate(-135deg);
+      top: -2px;
+  }
+
+}
+
+/* ------ MENU CENTRAL ---------- */
+
+.corretorHeader{
+  position: relative;
+  margin-top: 96px;
+  background-color: var(--D)
+}
+.MenuCentral_Nav{
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  /* background-color: #61dafb; */
+  /* height: 70px; */
+  flex-wrap: wrap;
+}
+.MenuCentral_Nav a{
+  padding: .5rem 1.5rem;
+  text-decoration: none;
+  font-family: var(--fonte);
+  color: var(--B);
+}
+.MenuCentral_Nav a:hover{
+  background-color: var(--F);
+  border-radius: var(--raios);
+}
+
+
+
+
 
 
 /* ------- BOXCARDS ----------- */
@@ -52,13 +271,10 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
+  gap: 2rem;
   margin-top: 1rem;
 }
 
-.corretorHeader{
-  margin-top: 126px;
-}
 
 
 /* ------- CADASTRO USUARIO ----------- */
