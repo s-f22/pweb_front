@@ -12,11 +12,9 @@ import { Link } from "react-router-dom";
 
 function Home_Vitrine() {
   return (
-    <div>
+    <div className='Home_Vitrine_Background'>
       <Cabecalho />
       <MenuCentral />
-
-      
 
       <BoxCards />
 

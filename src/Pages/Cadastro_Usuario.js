@@ -85,14 +85,14 @@ function Cadastro_Usuario() {
   const handleShow = () => setShow(true);
 
   return (
-    <div>
+    <div className='teste'>
       <Cabecalho />
       <MenuCentral />
       <Container className='Cadastro_Usuario_Container'>
         <Row>
-          <Col>
+          <Col className='Cadastro_Usuario_Col_1'>
 
-            <h2>Já tenho cadastro</h2>
+            <h2 className='Cadastro_Usuario_JaTenho'>Já tenho cadastro</h2>
 
             <FloatingLabel
               controlId="floatingInput"

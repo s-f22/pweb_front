@@ -13,7 +13,7 @@ import { Table, Row, Container, Col, Button, Modal } from 'react-bootstrap';
 function CarrinhoCompras() {
 
   return (
-    <div>
+    <div className='CarrinhoCompras_BackGroud'>
       <Cabecalho />
       <MenuCentral />
       <Container >

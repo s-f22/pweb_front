@@ -20,6 +20,15 @@ import foto18 from '../Assets/img/foto18.jpg';
 import foto19 from '../Assets/img/foto19.jpg';
 import foto20 from '../Assets/img/foto20.jpg';
 import foto21 from '../Assets/img/foto21.jpg';
+import foto22 from '../Assets/img/foto22.jpg';
+import foto23 from '../Assets/img/foto23.jpg';
+import foto24 from '../Assets/img/foto24.jpg';
+import foto25 from '../Assets/img/foto25.jpg';
+import foto26 from '../Assets/img/foto26.jpg';
+import foto27 from '../Assets/img/foto27.jpg';
+import foto28 from '../Assets/img/foto28.jpg';
+import foto29 from '../Assets/img/foto29.jpg';
+import foto30 from '../Assets/img/foto30.jpg';
 
 import '../Assets/css/estilos.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -62,8 +71,15 @@ function BoxCards() {
                 <CardProduto imagem={foto19}/>
                 <CardProduto imagem={foto20}/>
                 <CardProduto imagem={foto21}/>
-                
-
+                <CardProduto imagem={foto22}/>
+                <CardProduto imagem={foto23}/>
+                <CardProduto imagem={foto24}/>
+                <CardProduto imagem={foto25}/>
+                <CardProduto imagem={foto26}/>
+                <CardProduto imagem={foto27}/>
+                <CardProduto imagem={foto28}/>
+                <CardProduto imagem={foto29}/>
+                <CardProduto imagem={foto30}/>
             </Container>
         </CardGroup>
     );

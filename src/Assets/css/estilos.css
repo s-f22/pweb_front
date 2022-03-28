@@ -20,28 +20,15 @@
   --C: #dba36e;
   --D: #0a728f;
   --E: #bccbcf;
+  --BG: hsla(40, 23%, 97%, 0.9);
   --F: #79d6f0;
   --Branco: white;
 }
 
 /* ------------------------------------------------------------------------------ */
 
-.HomeVitrine_Container{
-  display: flex;
-  justify-content: center;
-  height: 300px;
-}
-
-.Home_Vitrine_ImagCarousel{
-  display: flex;
-  justify-content: center;
-  height: 300px;
-}
-.carousel {
-  display: flex;
-  justify-content: center;
-  width:300px;
-  height:300px;
+.Home_Vitrine_Background{
+  background-color: var(--BG)
 }
 
 
@@ -107,7 +94,7 @@
   background-color: var(--E) !important
 }
 .form-control{
-  background-color: rgba(250, 249, 247, 0.5) !important;
+  background-color: rgba(250, 249, 247, 0.8) !important;
 }
 .Cabecalho_Botao{
   background-color: var(--A);
@@ -279,7 +266,10 @@
 
 /* ------- CADASTRO USUARIO ----------- */
 
-
+.teste{
+  background-image: url(../img/background.jpg);
+  height: calc(100vh - 96px);
+}
 .row button{
   margin-top: 1rem;
   align-self: center;
@@ -287,7 +277,10 @@
 .row h2 {
   margin-top: 0rem;
   margin-bottom: 1rem;
+  color: var(--D)
+  /* background-color: #282c34; */
 }
+
 .row .Cadastro_Usuario_NaoTenho {
   display: flex;
   flex-direction: column;
@@ -295,14 +288,20 @@
   justify-content: center;
 }
 .Cadastro_Usuario_Container{
-  margin-top: 2rem;
+  margin-top: 3%;
+  
+}
+.Cadastro_Usuario_Col_1{
+  background-color: var(--BG);
+  padding: 3rem 0rem;
+  border-radius: var(--raios);
 }
 .Cadastro_Usuario_Col_2{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #d7f2f9;
+  background-color: var(--BG);
   margin-left: 50px;
   border-radius: var(--raios)
 }
@@ -343,6 +342,10 @@
 .CarrinhoCompras{
   text-align: right;
   margin-top: 2rem;
+}
+
+.CarrinhoCompras_BackGroud{
+  background-color: var(--BG);
 }
 
 
