@@ -54,7 +54,7 @@
 #header {
   box-sizing: border-box; 
   height: 70px;
-  padding: 3rem 1rem;
+  padding: 3rem 4rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -245,9 +245,16 @@
   background-color: var(--F);
   border-radius: var(--raios);
 }
-
-
-
+.HomeVitrine_Carousel{
+  display: flex;
+  height: 400px;
+  width: fit-content;
+}
+.HomeVitrine_CarrouselTextos {
+  background-color: rgba(40, 44, 52, .85);
+  border-radius: var(--raios);
+  margin-bottom: 1rem;
+}
 
 
 
@@ -345,7 +352,8 @@
 }
 
 .CarrinhoCompras_BackGroud{
-  background-color: var(--BG);
+  background-color: var(--E);
+  height: calc(100vh - 96px);
 }
 
 
