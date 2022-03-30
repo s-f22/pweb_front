@@ -17,7 +17,7 @@ function DetalheProduto() {
       <Cabecalho />
       <MenuCentral />
       <Container>
-        <Row>
+        <Row className='testtt'>
           <Col md={4}>
             <div className='DetalheProduto_Container'>
               <Pagination>

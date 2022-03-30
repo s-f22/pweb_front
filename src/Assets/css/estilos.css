@@ -43,17 +43,16 @@
 .HomeVitrine_Carousel{
   display: flex;
   height: 300px;
-  width: fit-content;
 }
 .HomeVitrine_CarrouselTextos {
-  background-color: rgba(10, 114, 143, .5);
-  /* background-color:rgba(40, 44, 52, .6); */
+  /* background-color: rgba(10, 114, 143, .5); */
+  background-color:rgba(40, 44, 52, .6);
   border-radius: var(--raios);
   margin-bottom: 1rem;
-  border: solid 1px var(--F);
+  border: solid 1px var(--D);
 }
 .HomeVitrine_CarrouselTextos h3 {
-  color: #61dafb;
+  color: var(--F);
 }
 
 
@@ -289,6 +288,7 @@
 .CardProduto_Textos{
   background: white !important;
   color: var(--D);
+  box-shadow: 5px 5px 10px var(--E) !important;
 }
 .CarProduto_Preco{
   font-size: 1.2rem;
@@ -297,7 +297,7 @@
 
 /* ------- CADASTRO USUARIO ----------- */
 .modal-content {
-  background-color: var(--E) !important;
+  background-color: rgba(188, 203, 207, .9) !important;
   color: #0a728f !important;
 }
 
@@ -333,7 +333,8 @@
   justify-content: center;
 }
 .Cadastro_Usuario_Col_1{
-  background-color: rgba(10, 114, 143, .5);
+  /* background-color: rgba(10, 114, 143, .5); */
+  background-color: rgba(40, 44, 52, .6);;
   padding: 3rem 0rem;
   border-radius: var(--raios);
   border: 1px solid var(--F);
@@ -344,7 +345,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgba(10, 114, 143, .5);
+  /* background-color: rgba(10, 114, 143, .5); */
+  background-color: rgba(40, 44, 52, .6);;
   margin-left: 50px;
   border-radius: var(--raios);
   border: 1px solid var(--F);
@@ -375,15 +377,21 @@
 
 .DetalheProduto_Imagem{
   display: flex;
-  width: 97%;
+  width: 100%;
   margin-bottom: 1rem;
   border-radius: var(--raios);
+  align-items: baseline;
 }
 
 .DetalheProduto_Textos{
-  margin-left: 2rem;
-  margin-top: 5rem;
+  margin-left: 1rem;
   color: #0a728f;
+  margin-top: 4rem;
+}
+.testtt{
+  display: flex;
+  height: calc(100vh - 168px);
+  
 }
 
 
