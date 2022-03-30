@@ -1,4 +1,4 @@
-
+import validator from 'validator'
 import '../Assets/css/estilos.css';
 import Cabecalho from '../Components/Cabecalho';
 import MenuCentral from '../Components/MenuCentral';
@@ -9,6 +9,9 @@ import { FloatingLabel, Form, Row, Container, Col, Button, Modal } from 'react-b
 
 
 function MyVerticallyCenteredModal(props) {
+
+  
+
   return (
     <Modal
       {...props}
@@ -18,7 +21,7 @@ function MyVerticallyCenteredModal(props) {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          É grátis e rápido =P
+          É grátis e rápido!
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
@@ -36,7 +39,8 @@ function MyVerticallyCenteredModal(props) {
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email</Form.Label>
-            <Form.Control type="email" placeholder="Insira seu endereço de email" />
+            <Form.Control  type="email" placeholder="Insira seu endereço de email" />
+            
             <Form.Text className="text-muted">
               (Não compartilhamos seus dados).
             </Form.Text>
@@ -65,8 +69,9 @@ function MyVerticallyCenteredModal(props) {
         </Form>
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.onHide}>Fechar</Button>
+        <Button variant="outline-secondary" onClick={props.onHide}>Fechar</Button>
       </Modal.Footer>
+
     </Modal>
   );
 }
@@ -84,6 +89,21 @@ function Cadastro_Usuario() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  //validação de email
+  const [emailError, setEmailError] = useState('')
+  const validateEmail = (e) => {
+    var email = e.target.value
+
+    if (validator.isEmail(email)) {
+      setEmailError('')
+    } else {
+      setEmailError('Email inválido.')
+    }
+  }
+
+
+  
+
   return (
     <div className='teste'>
       <Cabecalho />
@@ -96,21 +116,25 @@ function Cadastro_Usuario() {
 
             <FloatingLabel
               controlId="floatingInput"
-              label="Email address"
+              label="Email"
               className="mb-3"
             >
-              <Form.Control type="email" placeholder="name@example.com" />
+              <Form.Control onBlur={(e) => validateEmail(e)} type="email" placeholder="name@example.com" />
+              <span style={{
+              fontWeight: 'bold',
+              color: 'red',
+            }}>{emailError}</span>
             </FloatingLabel>
-            <FloatingLabel controlId="floatingPassword" label="Password">
+            <FloatingLabel controlId="floatingPassword" label="Senha">
               <Form.Control type="password" placeholder="Password" />
             </FloatingLabel>
             <div className='CadastroUsuario_BotoesEsq'>
               <Button variant="primary" type="submit">
-                Entar
+                Entrar
               </Button>
 
               <>
-                <Button variant="primary" onClick={handleShow}>
+                <Button variant="light" onClick={handleShow}>
                   Esqueci minha senha
                 </Button>
 
@@ -126,7 +150,7 @@ function Cadastro_Usuario() {
                     <Form.Control type="email" placeholder="name@example.com" />
                   </FloatingLabel></Modal.Body>
                   <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
+                    <Button variant="outline-secondary" onClick={handleClose}>
                       Fechar
                     </Button>
                     <Button variant="primary" onClick={handleClose}>

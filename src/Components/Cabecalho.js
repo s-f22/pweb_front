@@ -7,7 +7,8 @@ import user from '../Assets/img/user.svg'
 import locale from '../Assets/img/locale.svg'
 import '../Assets/css/estilos.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Form, FormControl, NavDropdown, Navbar, Nav, Container } from 'react-bootstrap';
+import { Form, FormControl, NavDropdown, Button, Nav, Container } from 'react-bootstrap';
+
 
 function Cabecalho() {
 
@@ -26,7 +27,8 @@ function Cabecalho() {
                     className="me-2"
                     aria-label="Search"
                 />
-                <button id="Cabecalho_BotaoHover" className="Cabecalho_Botao">Pesquisar</button>
+                <Link to="/resultado_pesquisa"><Button>Pesquisar</Button></Link>
+                
             </Form>
             <div className="Cabecalho_IconsDiv">
                 <NavDropdown  title={<img className="Cabecalho_SVG" src={locale}></img>} id="basic-nav-dropdown">

@@ -1,6 +1,7 @@
 import oferta1 from '../Assets/img/oferta1.png'
-import oferta2 from '../Assets/img/oferta2.png'
-import oferta3 from '../Assets/img/oferta3.png'
+import oferta3 from '../Assets/img/oferta3.jpg'
+import oferta6 from '../Assets/img/oferta6.jpg'
+
 
 import '../Assets/css/estilos.css';
 import BoxCards from '../Components/BoxCards';
@@ -16,7 +17,7 @@ function Home_Vitrine() {
       <Cabecalho />
       <MenuCentral />
 
-      <Carousel >
+      <Carousel>
         <Carousel.Item >
           <img
             className="d-block w-100 HomeVitrine_Carousel"
@@ -25,19 +26,19 @@ function Home_Vitrine() {
           />
           <Carousel.Caption className='HomeVitrine_CarrouselTextos'>
             <h3>Livros usados</h3>
-            <p>Vários títulos com descontos para você aproveitar aquela raridade quem alguem deixou de lado e tá só acumulando poeira.</p>
+            <p>Encontre aquela raridade que você tanto estava procurando</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img
             className="d-block w-100 HomeVitrine_Carousel"
-            src={oferta2}
+            src={oferta6}
             alt="Second slide"
           />
 
           <Carousel.Caption className='HomeVitrine_CarrouselTextos'>
-            <h3>Coleção COMPLETA Stephen King</h3>
-            <p>Todos os volumes do mestre do terror com desconto de 20% em compra única do lote, ou 5% em cada título.</p>
+            <h3>Coleção completa Stephen King</h3>
+            <p>Toda a coleção do mestre do terror com desconto de 20%</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -48,8 +49,8 @@ function Home_Vitrine() {
           />
 
           <Carousel.Caption className='HomeVitrine_CarrouselTextos'>
-            <h3>Os irmãos Karamázov</h3>
-            <p>Clássico do escritos Fiódor Dostoiévski em 2 volumes com tradução direta do russo por Paulo Bezzera, na editora 34. Edição de colecionador limitada a 20 exemplares.</p>
+            <h3>Astronomia com 15% de desconto</h3>
+            <p>Seleção com os melhores livros do universo pra fechar sua coleção</p>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>

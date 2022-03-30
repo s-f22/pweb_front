@@ -27,8 +27,33 @@
 
 /* ------------------------------------------------------------------------------ */
 
+.btn-primary {
+  color: #fff;
+  background-color: var(--A) !important;
+  border-color: var(--A) !important;
+}
+
+/* --------- Home Vitrine ------------ */
+
+
 .Home_Vitrine_Background{
   background-color: var(--BG)
+}
+
+.HomeVitrine_Carousel{
+  display: flex;
+  height: 300px;
+  width: fit-content;
+}
+.HomeVitrine_CarrouselTextos {
+  background-color: rgba(10, 114, 143, .5);
+  /* background-color:rgba(40, 44, 52, .6); */
+  border-radius: var(--raios);
+  margin-bottom: 1rem;
+  border: solid 1px var(--F);
+}
+.HomeVitrine_CarrouselTextos h3 {
+  color: #61dafb;
 }
 
 
@@ -36,17 +61,18 @@
 /* ------- HEADER ----------- */
 
 #header a {
-  color: white;
+  color: var(--D);
   text-decoration: none;
   font-family: sans-serif;
 }
 
 #header a:hover {
   background: var(--F);
+  border-radius: 5px;
 }
 
 #header #logo{
-  height: 90px;
+  height: 100px;
   border-radius: var(--raios);
 }
 
@@ -82,7 +108,10 @@
   display: flex;
   flex-direction: row;
   width: 100%;
-  font-weight: bolder;
+  
+}
+.Cabecalho_Links a{
+  color: var(--D) !important;
 }
 
 .Cabecalho_IconsDiv{
@@ -95,16 +124,6 @@
 }
 .form-control{
   background-color: rgba(250, 249, 247, 0.8) !important;
-}
-.Cabecalho_Botao{
-  background-color: var(--A);
-  padding: .5rem 1rem;
-  border: none;
-  border-radius: 5px;
-  color: #d7f2f9;
-}
-#Cabecalho_BotaoHover :hover{
-  background-color: var(--F) !important;
 }
 
 .Cabecalho_Nav{
@@ -159,7 +178,7 @@
   /* quando #nav tiver a classe "active", eu quero falar com #menu; overflow auto só serve para, em caso de a lista possuir muitos itens, uma barra de scroll é adicionada automaticamente para que sejam visiveis */
   #header #nav.active #menu {
       /* height: calc(100vh - 70px); */
-      height: 200px;
+      height: 130px;
       visibility: visible;
       border-bottom: solid 1px bl;
       /* overflow-y: auto; */
@@ -185,10 +204,11 @@
       cursor: pointer;
       gap: .5rem;
       align-items: center;
+      color: #0a728f;
   }
 
   #header #nav #hamburger {
-      border-top: 2px solid;
+      border-top: 2px solid #0a728f;
       width: 20px;
   }
 
@@ -239,22 +259,14 @@
   padding: .5rem 1.5rem;
   text-decoration: none;
   font-family: var(--fonte);
-  color: var(--B);
+  color: var(--F);
+  /* font-weight: bold; */
 }
 .MenuCentral_Nav a:hover{
   background-color: var(--F);
   border-radius: var(--raios);
 }
-.HomeVitrine_Carousel{
-  display: flex;
-  height: 400px;
-  width: fit-content;
-}
-.HomeVitrine_CarrouselTextos {
-  background-color: rgba(40, 44, 52, .85);
-  border-radius: var(--raios);
-  margin-bottom: 1rem;
-}
+
 
 
 
@@ -266,13 +278,28 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
 
 
-/* ------- CADASTRO USUARIO ----------- */
 
+/* -------- CARDPRODUTO --------- */
+
+.CardProduto_Textos{
+  background: white !important;
+  color: var(--D);
+}
+.CarProduto_Preco{
+  font-size: 1.2rem;
+}
+
+
+/* ------- CADASTRO USUARIO ----------- */
+.modal-content {
+  background-color: var(--E) !important;
+  color: #0a728f !important;
+}
 .teste{
   background-image: url(../img/background.jpg);
   height: calc(100vh - 96px);
@@ -283,8 +310,9 @@
 }
 .row h2 {
   margin-top: 0rem;
-  margin-bottom: 1rem;
-  color: var(--D)
+  margin-bottom: 2rem;
+  color:var(--F);
+  /* font-weight: bold; */
   /* background-color: #282c34; */
 }
 
@@ -293,24 +321,31 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: 0;
+}
+.row .Cadastro_Usuario_NaoTenho button{
+  margin-top: 0 !important;
 }
 .Cadastro_Usuario_Container{
   margin-top: 3%;
   
 }
 .Cadastro_Usuario_Col_1{
-  background-color: var(--BG);
+  background-color: rgba(10, 114, 143, .5);
   padding: 3rem 0rem;
   border-radius: var(--raios);
+  border: 1px solid var(--F);
+  color: #0a728f;
 }
 .Cadastro_Usuario_Col_2{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: var(--BG);
+  background-color: rgba(10, 114, 143, .5);
   margin-left: 50px;
-  border-radius: var(--raios)
+  border-radius: var(--raios);
+  border: 1px solid var(--F);
 }
 .CadastroUsuario_BotoesEsq{
   display: flex;
@@ -321,21 +356,32 @@
 
 /* ------- DETALHE PRODUTO ----------- */
 
+.DetalheProdutoBackground{
+  background-color: var(--B);
+  height: calc(100vh - 96px);
+}
 .DetalheProduto_Container{
   display: flex;
   flex-direction: column;
   margin-top: 1rem;
-  /* background-color: #61dafb; */
   align-items: center;
+}
+.DetalheProduto_Container h3{
+
+  color: #0a728f;
 }
 
 .DetalheProduto_Imagem{
+  display: flex;
+  width: 97%;
   margin-bottom: 1rem;
+  border-radius: var(--raios);
 }
 
 .DetalheProduto_Textos{
-  margin-left: 1rem;
-  margin-top: 1rem;
+  margin-left: 2rem;
+  margin-top: 5rem;
+  color: #0a728f;
 }
 
 
@@ -343,7 +389,11 @@
 
 .CarrinhoCompras_Titulo{
   margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+.CarrinhoComprasTextTable{
+  color: #0a728f !important;
+  --bs-table-striped-color:#0a728f !important;
 }
 
 .CarrinhoCompras{
@@ -352,12 +402,38 @@
 }
 
 .CarrinhoCompras_BackGroud{
-  background-color: var(--E);
+  background-color: var(--B);
+  height: calc(100vh - 96px);
+  color: #0a728f;
+}
+
+
+/* -------RESULTADO PESQUISA-------- */
+
+.ResultadoPesquisa_Background{
+  background-color: var(--B);
   height: calc(100vh - 96px);
 }
 
 
+/* ------- BOXCARDSPESQUISA ----------- */
 
+.BoxCardsPesquisaContainer{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: #0a728f;
+}
+.BoxCardsPesquisaContainer p{
+  font-style: oblique;
+}
+.PesquisaCardsWrap{
+  /* flex-direction: column; */
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: center; */
+  gap: 2rem;
+  margin-top: 1rem;
+}
 
 
 

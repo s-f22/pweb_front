@@ -29,23 +29,23 @@ import foto27 from '../Assets/img/foto27.jpg';
 import foto28 from '../Assets/img/foto28.jpg';
 import foto29 from '../Assets/img/foto29.jpg';
 import foto30 from '../Assets/img/foto30.jpg';
+import foto31 from '../Assets/img/foto31.jpg';
+import foto32 from '../Assets/img/foto32.jpg';
 
 import '../Assets/css/estilos.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Row, Container, Button, Card, CardGroup } from 'react-bootstrap';
-import { Link } from "react-router-dom";
+import { Container, CardGroup } from 'react-bootstrap';
+
 import CardProduto from '../Components/CardProduto';
 
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 
 
 
 
 function BoxCards() {
 
-    const [listaFotos, setlistaFotos] = useState([]);
-
-    //setlistaFotos();
+    // const [listaFotos, setlistaFotos] = useState([]);
 
     return (
         <CardGroup expand="lg">
@@ -80,6 +80,8 @@ function BoxCards() {
                 <CardProduto imagem={foto28}/>
                 <CardProduto imagem={foto29}/>
                 <CardProduto imagem={foto30}/>
+                <CardProduto imagem={foto31}/>
+                <CardProduto imagem={foto32}/>
             </Container>
         </CardGroup>
     );

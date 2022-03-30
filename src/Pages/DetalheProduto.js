@@ -1,6 +1,5 @@
-import krmz from '../Assets/img/krmz.jpg'
+import foto3 from '../Assets/img/foto3.jpg'
 
-import Image from 'react-bootstrap/Image'
 
 import '../Assets/css/estilos.css';
 import Cabecalho from '../Components/Cabecalho';
@@ -14,12 +13,12 @@ import { Link } from "react-router-dom";
 function DetalheProduto() {
 
   return (
-    <div>
+    <div className='DetalheProdutoBackground'>
       <Cabecalho />
       <MenuCentral />
       <Container>
         <Row>
-          <Col xs={3}>
+          <Col md={4}>
             <div className='DetalheProduto_Container'>
               <Pagination>
                 
@@ -33,7 +32,7 @@ function DetalheProduto() {
                 <Pagination.Next />
                 
               </Pagination>
-              <img className='DetalheProduto_Imagem' src={krmz}></img>
+              <img className='DetalheProduto_Imagem' src={foto3}></img>
               <h3>R$0,00</h3>
             </div>
           </Col>
@@ -42,15 +41,15 @@ function DetalheProduto() {
             <div className='DetalheProduto_Textos'>
               <div>
                 <h3>Título:</h3>
-                <p>Os irmãos Karamazov</p>
+                <p>Nome do livro</p>
               </div>
               <div>
                 <h3>Autor</h3>
-                <p>Os irmãos Karamazov</p>
+                <p>Nome do autor</p>
               </div>
               <div>
                 <h3>Editora</h3>
-                <p>Os irmãos Karamazov</p>
+                <p>Nome da editora</p>
               </div>
               <div>
                 <h3>Detalhes</h3>

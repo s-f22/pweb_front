@@ -18,7 +18,7 @@ function CarrinhoCompras() {
       <MenuCentral />
       <Container >
         <h1 className='CarrinhoCompras_Titulo'>Carrinho de compras: </h1>
-        <Table striped bordered hover >
+        <Table striped bordered hover className='CarrinhoComprasTextTable'>
           <thead>
             <tr>
               <th >#</th>
@@ -30,36 +30,31 @@ function CarrinhoCompras() {
           <tbody>
             <tr>
               <td>1</td>
-              <td>Os Irmãos Karamázov</td>
+              <td>Nome do livro</td>
               <td>1</td>
               <td>R$0,00</td>
             </tr>
             <tr>
               <td>1</td>
-              <td>Os Irmãos Karamázov</td>
+              <td>Nome do livro</td>
               <td>1</td>
               <td>R$0,00</td>
             </tr>
             <tr>
               <td>1</td>
-              <td>Os Irmãos Karamázov</td>
+              <td>Nome do livro</td>
               <td>1</td>
               <td>R$0,00</td>
             </tr>
-            <tr>
-              <td>1</td>
-              <td>Os Irmãos Karamázov</td>
-              <td>1</td>
-              <td>R$0,00</td>
-            </tr>
+            
 
           </tbody>
 
         </Table>
         <h3 className='CarrinhoCompras'>Total: R$0,00</h3>
         <Row>
-          <Button >Finalizar pedido</Button>
-          <Button variant="danger" >Limpar carrinho</Button>
+          <Button variant="outline-success">Finalizar pedido</Button>
+          <Button variant="outline-secondary" >Limpar carrinho</Button>
         </Row>
       </Container>
     </div>
