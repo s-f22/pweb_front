@@ -10,6 +10,31 @@ import { FloatingLabel, Form, Row, Container, Col, Button, Modal } from 'react-b
 
 function MyVerticallyCenteredModal(props) {
 
+  //validação de email
+  const [emailError, setEmailError] = useState('')
+  const validateEmail = (e) => {
+    var email = e.target.value
+
+    if (!validator.isEmail(email)) {
+      setEmailError('Email inválido. ')
+    }else
+    {
+      setEmailError('')
+    }
+    if (email === '') {
+      setEmailError('')
+    }
+  }
+
+
+  //validação de nome
+  const [nomeError, setNomeError] = useState('')
+  const validateNome = (e) => {
+    var nome = e.target.value;
+    if (nome.value.length <= parseInt(3)) {
+      setNomeError('Nome inválido. ')
+    }
+  }
   
 
   return (
@@ -29,8 +54,11 @@ function MyVerticallyCenteredModal(props) {
         <Form>
           <Form.Group className="mb-3" controlId="formBasicNome">
             <Form.Label>Nome</Form.Label>
-            <Form.Control type="name" placeholder="Insira seu nome completo" />
-
+            <Form.Control required minLength={3} onChange={(e) => validateNome(e)} type="name" placeholder="Insira seu nome completo" />
+            <span style={{
+              fontWeight: 'bold',
+              color: 'red',
+            }}>{nomeError}</span>
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicCPF">
             <Form.Label>CPF</Form.Label>
@@ -39,8 +67,11 @@ function MyVerticallyCenteredModal(props) {
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email</Form.Label>
-            <Form.Control  type="email" placeholder="Insira seu endereço de email" />
-            
+            <Form.Control onBlur={(e) => validateEmail(e)} type="email" placeholder="Insira seu endereço de email" />
+            <span style={{
+              fontWeight: 'bold',
+              color: 'red',
+            }}>{emailError}</span>
             <Form.Text className="text-muted">
               (Não compartilhamos seus dados).
             </Form.Text>
@@ -94,10 +125,14 @@ function Cadastro_Usuario() {
   const validateEmail = (e) => {
     var email = e.target.value
 
-    if (validator.isEmail(email)) {
-      setEmailError('')
-    } else {
+    if (!validator.isEmail(email)) {
       setEmailError('Email inválido.')
+    }else
+    {
+      setEmailError('')
+    }
+    if (email === '') {
+      setEmailError('')
     }
   }
 
