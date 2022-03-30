@@ -300,10 +300,7 @@
   background-color: var(--E) !important;
   color: #0a728f !important;
 }
-.teste{
-  background-image: url(../img/background.jpg);
-  height: calc(100vh - 96px);
-}
+
 .row button{
   margin-top: 1rem;
   align-self: center;
@@ -326,9 +323,14 @@
 .row .Cadastro_Usuario_NaoTenho button{
   margin-top: 0 !important;
 }
+.CadastroUsuarioBackgroundImage{
+  background-image: url(../img/background.jpg);
+}
 .Cadastro_Usuario_Container{
-  margin-top: 3%;
-  
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 168px);
+  justify-content: center;
 }
 .Cadastro_Usuario_Col_1{
   background-color: rgba(10, 114, 143, .5);

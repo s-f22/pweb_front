@@ -140,7 +140,7 @@ function Cadastro_Usuario() {
   
 
   return (
-    <div className='teste'>
+    <div className='CadastroUsuarioBackgroundImage' >
       <Cabecalho />
       <MenuCentral />
       <Container className='Cadastro_Usuario_Container'>
