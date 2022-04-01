@@ -38,7 +38,7 @@ function Home_Vitrine() {
 
           <Carousel.Caption className='HomeVitrine_CarrouselTextos'>
             <h3>Stephen King</h3>
-            <p>Coleleção completa com desconto de 20%</p>
+            <p>Coleção completa com desconto de 20%</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>

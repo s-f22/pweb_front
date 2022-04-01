@@ -17,8 +17,7 @@ function MyVerticallyCenteredModal(props) {
 
     if (!validator.isEmail(email)) {
       setEmailError('Email inválido. ')
-    }else
-    {
+    } else {
       setEmailError('')
     }
     if (email === '') {
@@ -31,11 +30,44 @@ function MyVerticallyCenteredModal(props) {
   const [nomeError, setNomeError] = useState('')
   const validateNome = (e) => {
     var nome = e.target.value;
-    if (nome.value.length <= parseInt(3)) {
-      setNomeError('Nome inválido. ')
+    if (nome.length < 3) {
+      setNomeError('Nome inválido. Mínimo de 3 caracteres')
+    } else {
+      setNomeError('')
+    }
+    if (nome === '') {
+      setNomeError('')
     }
   }
-  
+
+  //validacao de senha
+  const [senhaError, setsenhaError] = useState('')
+  const [senha1, setSenha1] = useState('')
+
+  const preencherSenha1 = (i) => {
+    const valor = i.target.value;
+    setSenha1(valor)
+    console.log(senha1)
+  }
+
+
+  const validarSenha = (j) => {
+    var key2 = j.target.value;
+    console.log(key2);
+
+    if (key2 !== { senha1 }) {
+      setsenhaError('As senhas não conferem. Por favor, verifique.');
+    } else if (key2 == { senha1 }) {
+      setsenhaError('Senha válida');
+    } else if (key2 === '') {
+      setsenhaError('')
+    }
+    
+   
+
+  }
+
+
 
   return (
     <Modal
@@ -54,7 +86,7 @@ function MyVerticallyCenteredModal(props) {
         <Form>
           <Form.Group className="mb-3" controlId="formBasicNome">
             <Form.Label>Nome</Form.Label>
-            <Form.Control required minLength={3} onChange={(e) => validateNome(e)} type="name" placeholder="Insira seu nome completo" />
+            <Form.Control required minLength={3} onBlur={(e) => validateNome(e)} type="name" placeholder="Insira seu nome completo" />
             <span style={{
               fontWeight: 'bold',
               color: 'red',
@@ -81,13 +113,17 @@ function MyVerticallyCenteredModal(props) {
             <Col>
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Senha</Form.Label>
-                <Form.Control type="password" placeholder="(Mínimo de 8 caracteres)" />
+                <Form.Control onChangeCapture={(i) => preencherSenha1(i)} type="password" placeholder="(Mínimo de 8 caracteres)" />
               </Form.Group>
             </Col>
             <Col>
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Confirmação</Form.Label>
-                <Form.Control type="password" placeholder="Redigite a senha" />
+                <Form.Control onBlur={(j) => validarSenha(j)} type="password" placeholder="Redigite a senha" />
+                <span style={{
+                  fontWeight: 'bold',
+                  color: 'red',
+                }}>{senhaError}</span>
               </Form.Group>
             </Col>
           </Row>
@@ -127,8 +163,7 @@ function Cadastro_Usuario() {
 
     if (!validator.isEmail(email)) {
       setEmailError('Email inválido.')
-    }else
-    {
+    } else {
       setEmailError('')
     }
     if (email === '') {
@@ -137,7 +172,7 @@ function Cadastro_Usuario() {
   }
 
 
-  
+
 
   return (
     <div className='CadastroUsuarioBackgroundImage' >
@@ -156,9 +191,9 @@ function Cadastro_Usuario() {
             >
               <Form.Control onBlur={(e) => validateEmail(e)} type="email" placeholder="name@example.com" />
               <span style={{
-              fontWeight: 'bold',
-              color: 'red',
-            }}>{emailError}</span>
+                fontWeight: 'bold',
+                color: 'red',
+              }}>{emailError}</span>
             </FloatingLabel>
             <FloatingLabel controlId="floatingPassword" label="Senha">
               <Form.Control type="password" placeholder="Password" />
@@ -178,11 +213,16 @@ function Cadastro_Usuario() {
                     <Modal.Title>Enviar uma nova senha para:</Modal.Title>
                   </Modal.Header>
                   <Modal.Body><FloatingLabel
+                    onBlur={(e) => validateEmail(e)}
                     controlId="floatingInput"
                     label="Digite seu email"
                     className="mb-3"
                   >
                     <Form.Control type="email" placeholder="name@example.com" />
+                    <span style={{
+                      fontWeight: 'bold',
+                      color: 'red',
+                    }}>{emailError}</span>
                   </FloatingLabel></Modal.Body>
                   <Modal.Footer>
                     <Button variant="outline-secondary" onClick={handleClose}>
