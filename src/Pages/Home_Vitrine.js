@@ -1,4 +1,4 @@
-import oferta1 from '../Assets/img/oferta1.png'
+import oferta1 from '../Assets/img/oferta1.jpg'
 import oferta3 from '../Assets/img/oferta3.jpg'
 import oferta6 from '../Assets/img/oferta6.jpg'
 
@@ -17,40 +17,40 @@ function Home_Vitrine() {
       <Cabecalho />
       <MenuCentral />
 
-      <Carousel>
+      <Carousel >
         <Carousel.Item >
-          <img
-            className="d-block w-100 HomeVitrine_Carousel"
+          <img 
+            className="d-block w-100 "
             src={oferta1}
             alt="First slide"
           />
           <Carousel.Caption className='HomeVitrine_CarrouselTextos'>
-            <h3>Livros usados</h3>
-            <p>Encontre aquela raridade que você tanto estava procurando</p>
+            <h3>Cupom: PWEB</h3>
+            <p>Adicione para ganhar 1 ponto na P1</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img
-            className="d-block w-100 HomeVitrine_Carousel"
+            className="d-block w-100 "
             src={oferta6}
             alt="Second slide"
           />
 
           <Carousel.Caption className='HomeVitrine_CarrouselTextos'>
             <h3>Stephen King</h3>
-            <p>Toda a coleção do mestre do terror com desconto de 20%</p>
+            <p>Coleleção completa com desconto de 20%</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img
-            className="d-block w-100 HomeVitrine_Carousel"
+            className="d-block w-100 "
             src={oferta3}
             alt="Third slide"
           />
 
           <Carousel.Caption className='HomeVitrine_CarrouselTextos'>
             <h3>Astronomia com 15% de desconto</h3>
-            <p>Seleção com os melhores livros do universo pra fechar sua coleção</p>
+            <p>Seleção com os melhores livros do universo</p>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>

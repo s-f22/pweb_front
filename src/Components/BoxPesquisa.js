@@ -22,7 +22,7 @@ function BoxCardsPesquisa() {
     return (
         <Container className='BoxCardsPesquisaContainer'>
             <h1>Resultado da pesquisa: </h1>
-            <p>Você buscou por: Carl Sagan</p>
+            <p>Você buscou por: <u>carl sagan</u></p>
             <CardGroup expand="lg">
                 <Container className='PesquisaCardsWrap'  >
 

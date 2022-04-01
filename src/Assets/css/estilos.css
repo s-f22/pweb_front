@@ -35,24 +35,35 @@
 
 /* --------- Home Vitrine ------------ */
 
-
+.ImgCover{
+  width: cover;
+}
 .Home_Vitrine_Background{
   background-color: var(--BG)
 }
 
-.HomeVitrine_Carousel{
-  display: flex;
-  height: 300px;
-}
+
 .HomeVitrine_CarrouselTextos {
   /* background-color: rgba(10, 114, 143, .5); */
   background-color:rgba(40, 44, 52, .6);
   border-radius: var(--raios);
-  margin-bottom: 1rem;
   border: solid 1px var(--D);
+  display: flex;
+  flex-direction: column;
 }
 .HomeVitrine_CarrouselTextos h3 {
   color: var(--F);
+}
+.carousel-caption {
+  position: absolute;
+  /* right: 30% !important; */
+  bottom: 1.25rem;
+  /* left: 30% !important; */
+  padding-top: 0rem !important;
+  padding-bottom: 0rem !important;
+  color: #fff;
+  text-align: center;
+  height: 80px;
 }
 
 

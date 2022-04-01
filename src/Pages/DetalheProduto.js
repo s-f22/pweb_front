@@ -6,7 +6,7 @@ import Cabecalho from '../Components/Cabecalho';
 import MenuCentral from '../Components/MenuCentral';
 
 import React, { useState, useEffect } from "react";
-import { Pagination, Row, Container, Col, Button, Modal } from 'react-bootstrap';
+import { Pagination, Row, Container, Col, Button, PageItem } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 
 
