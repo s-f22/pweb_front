@@ -56,9 +56,9 @@
 }
 .carousel-caption {
   position: absolute;
-  /* right: 30% !important; */
+  right: 25% !important;
   bottom: 1.25rem;
-  /* left: 30% !important; */
+  left: 25% !important;
   padding-top: 0rem !important;
   padding-bottom: 0rem !important;
   color: #fff;

@@ -49,7 +49,7 @@ function Home_Vitrine() {
           />
 
           <Carousel.Caption className='HomeVitrine_CarrouselTextos'>
-            <h3>Astronomia com 15% de desconto</h3>
+            <h3>15% OFF - Astronomia</h3>
             <p>Seleção com os melhores livros do universo</p>
           </Carousel.Caption>
         </Carousel.Item>
