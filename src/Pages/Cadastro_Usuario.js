@@ -6,6 +6,9 @@ import MenuCentral from '../Components/MenuCentral';
 import React, { useState, useEffect } from "react";
 import { FloatingLabel, Form, Row, Container, Col, Button, Modal } from 'react-bootstrap';
 
+import axios from "axios";
+
+import { useNavigate } from 'react-router-dom';
 
 
 function MyVerticallyCenteredModal(props) {
@@ -62,8 +65,8 @@ function MyVerticallyCenteredModal(props) {
     } else if (key2 === '') {
       setsenhaError('')
     }
-    
-   
+
+
 
   }
 
@@ -147,10 +150,18 @@ function MyVerticallyCenteredModal(props) {
 
 function Cadastro_Usuario() {
 
+  const [email, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
+  const [msgErro, setMsgErro] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
+
+
+
   // Modal Cadastrar novo usuario
   const [modalShow, setModalShow] = React.useState(false);
 
-  // Modal Esquici minha senha
+  // Modal Esqueci minha senha
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -174,6 +185,42 @@ function Cadastro_Usuario() {
 
 
 
+  function EfetuaLogin(evento) {
+
+    //console.log("fui chamado")
+    evento.preventDefault();
+
+    setMsgErro('');
+    setIsLoading(true);
+
+    axios.post('http://localhost:5000/api/Logins', { Email: email, Senha: senha })
+
+      .then((resposta) => {
+
+        if (resposta.status === 200) {
+          localStorage.setItem('usuario-login', resposta.data.token);
+          setIsLoading(false);
+          let base64 = localStorage.getItem('usuario-login').split('.')[1];
+          //console.log(base64);
+          //history.push('/');
+          navigate('/');
+        }
+
+      })
+
+      .catch(() => {
+        setMsgErro('Email e/ou senha invalidos');
+        setIsLoading(false);
+        console.log(msgErro);
+      }
+
+      );
+
+  };
+
+
+
+
   return (
     <div className='CadastroUsuarioBackgroundImage' >
       <Cabecalho />
@@ -181,61 +228,55 @@ function Cadastro_Usuario() {
       <Container className='Cadastro_Usuario_Container'>
         <Row>
           <Col className='Cadastro_Usuario_Col_1'>
+            <form action="" onSubmit={EfetuaLogin}>
+              <h2 className='Cadastro_Usuario_JaTenho'>Já tenho cadastro</h2>
 
-            <h2 className='Cadastro_Usuario_JaTenho'>Já tenho cadastro</h2>
-
-            <FloatingLabel
-              controlId="floatingInput"
-              label="Email"
-              className="mb-3"
-            >
-              <Form.Control onBlur={(e) => validateEmail(e)} type="email" placeholder="name@example.com" />
-              <span style={{
-                fontWeight: 'bold',
-                color: 'red',
-              }}>{emailError}</span>
-            </FloatingLabel>
-            <FloatingLabel controlId="floatingPassword" label="Senha">
-              <Form.Control type="password" placeholder="Password" />
-            </FloatingLabel>
-            <div className='CadastroUsuario_BotoesEsq'>
-              <Button variant="primary" type="submit">
-                Entrar
-              </Button>
-
-              <>
-                <Button variant="light" onClick={handleShow}>
-                  Esqueci minha senha
+              <FloatingLabel controlId="floatingInput" label="Email" className="mb-3" value={email} onChange={(evt) => setEmail(evt.target.value)} >
+                <Form.Control onBlur={(e) => validateEmail(e)} type="email" placeholder="name@example.com" />
+                <span style={{ fontWeight: 'bold', color: 'red', }}>{emailError}</span>
+              </FloatingLabel>
+              <FloatingLabel controlId="floatingPassword" label="Senha" value={senha} onChange={(evt) => setSenha(evt.target.value)} >
+                <Form.Control type="password" placeholder="Password" />
+              </FloatingLabel>
+              <div className='CadastroUsuario_BotoesEsq'>
+                <Button variant="primary" type="submit" disabled={ isLoading ? true : false }>
+                  Entrar
                 </Button>
 
-                <Modal show={show} onHide={handleClose}>
-                  <Modal.Header closeButton>
-                    <Modal.Title>Enviar uma nova senha para:</Modal.Title>
-                  </Modal.Header>
-                  <Modal.Body><FloatingLabel
-                    onBlur={(e) => validateEmail(e)}
-                    controlId="floatingInput"
-                    label="Digite seu email"
-                    className="mb-3"
-                  >
-                    <Form.Control type="email" placeholder="name@example.com" />
-                    <span style={{
-                      fontWeight: 'bold',
-                      color: 'red',
-                    }}>{emailError}</span>
-                  </FloatingLabel></Modal.Body>
-                  <Modal.Footer>
-                    <Button variant="outline-secondary" onClick={handleClose}>
-                      Fechar
-                    </Button>
-                    <Button variant="primary" onClick={handleClose}>
-                      Enviar
-                    </Button>
-                  </Modal.Footer>
-                </Modal>
-              </>
+                <>
+                  <Button variant="light" onClick={handleShow}>
+                    Esqueci minha senha
+                  </Button>
 
-            </div>
+                  <Modal show={show} onHide={handleClose}>
+                    <Modal.Header closeButton>
+                      <Modal.Title>Enviar uma nova senha para:</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body><FloatingLabel
+                      onBlur={(e) => validateEmail(e)}
+                      controlId="floatingInput"
+                      label="Digite seu email"
+                      className="mb-3"
+                    >
+                      <Form.Control type="email" placeholder="name@example.com" />
+                      <span style={{
+                        fontWeight: 'bold',
+                        color: 'red',
+                      }}>{emailError}</span>
+                    </FloatingLabel></Modal.Body>
+                    <Modal.Footer>
+                      <Button variant="outline-secondary" onClick={handleClose}>
+                        Fechar
+                      </Button>
+                      <Button variant="primary" onClick={handleClose}>
+                        Enviar
+                      </Button>
+                    </Modal.Footer>
+                  </Modal>
+                </>
+
+              </div>
+            </form>
           </Col>
 
           <Col className='Cadastro_Usuario_Col_2'>
