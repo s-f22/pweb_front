@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\FATEC\\3\\PWeb\\p2_pweb\\backEnd\\p2_PWEB_livraria\\p2_PWEB_livraria\\p2_PWEB_livraria.csproj": {}
+    "D:\\FATEC\\3\\PWeb\\pweb_p1_p2\\API\\backEnd\\p2_PWEB_livraria\\p2_PWEB_livraria\\p2_PWEB_livraria.csproj": {}
   },
   "projects": {
-    "D:\\FATEC\\3\\PWeb\\p2_pweb\\backEnd\\p2_PWEB_livraria\\p2_PWEB_livraria\\p2_PWEB_livraria.csproj": {
+    "D:\\FATEC\\3\\PWeb\\pweb_p1_p2\\API\\backEnd\\p2_PWEB_livraria\\p2_PWEB_livraria\\p2_PWEB_livraria.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\FATEC\\3\\PWeb\\p2_pweb\\backEnd\\p2_PWEB_livraria\\p2_PWEB_livraria\\p2_PWEB_livraria.csproj",
+        "projectUniqueName": "D:\\FATEC\\3\\PWeb\\pweb_p1_p2\\API\\backEnd\\p2_PWEB_livraria\\p2_PWEB_livraria\\p2_PWEB_livraria.csproj",
         "projectName": "p2_PWEB_livraria",
-        "projectPath": "D:\\FATEC\\3\\PWeb\\p2_pweb\\backEnd\\p2_PWEB_livraria\\p2_PWEB_livraria\\p2_PWEB_livraria.csproj",
+        "projectPath": "D:\\FATEC\\3\\PWeb\\pweb_p1_p2\\API\\backEnd\\p2_PWEB_livraria\\p2_PWEB_livraria\\p2_PWEB_livraria.csproj",
         "packagesPath": "C:\\Users\\Werther\\.nuget\\packages\\",
-        "outputPath": "D:\\FATEC\\3\\PWeb\\p2_pweb\\backEnd\\p2_PWEB_livraria\\p2_PWEB_livraria\\obj\\",
+        "outputPath": "D:\\FATEC\\3\\PWeb\\pweb_p1_p2\\API\\backEnd\\p2_PWEB_livraria\\p2_PWEB_livraria\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Werther\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "my+f+1I5uldBYMLBpnNU9q3J6xxf09gyBUgkUb6MBo9Qh3ff3R3HiM3/+KPFipwm9euPs6JvqbBXsmnnl3nX2Q==",
+  "dgSpecHash": "l+s7tFVMEOfMoq4WPCOhi4y7q+wp/pwKErTK9d4+7UBiqP0SrIS28H8NErRD5xOMDlb2rJ8XUuL7zn/NgXKUwg==",
   "success": true,
-  "projectFilePath": "D:\\FATEC\\3\\PWeb\\p2_pweb\\backEnd\\p2_PWEB_livraria\\p2_PWEB_livraria\\p2_PWEB_livraria.csproj",
+  "projectFilePath": "D:\\FATEC\\3\\PWeb\\pweb_p1_p2\\API\\backEnd\\p2_PWEB_livraria\\p2_PWEB_livraria\\p2_PWEB_livraria.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Werther\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Werther\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.17\\microsoft.aspnetcore.authentication.jwtbearer.5.0.17.nupkg.sha512",

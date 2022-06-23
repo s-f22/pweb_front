@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = p2_PWEB_livraria
-build_property.ProjectDir = D:\FATEC\3\PWeb\p2_pweb\backEnd\p2_PWEB_livraria\p2_PWEB_livraria\
+build_property.ProjectDir = D:\FATEC\3\PWeb\pweb_p1_p2\API\backEnd\p2_PWEB_livraria\p2_PWEB_livraria\

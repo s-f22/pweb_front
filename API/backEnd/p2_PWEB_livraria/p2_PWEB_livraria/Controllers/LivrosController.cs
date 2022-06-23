@@ -37,5 +37,12 @@ namespace p2_PWEB_livraria.Controllers
             }
         }
 
+
+        [HttpGet("{idLivro}")]
+        public IActionResult BuscarLivroPorID(int idLivro)
+        {
+            return Ok(_livroRepository.ListarLivroPorId(idLivro));
+        }
+
     }
 }

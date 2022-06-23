@@ -19,13 +19,15 @@ import reportWebVitals from './reportWebVitals';
 
 
 const rootElement = document.getElementById("root");
+
 render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<Home_Vitrine />} />
       <Route path="cadastro_usuario" element={<Cadastro_Usuario />} />
-      <Route path="detalhe_produto" element={<DetalheProduto />} />
+      <Route path="detalhe_produto/:idLivro" element={<DetalheProduto />} />
       <Route path="carrinho_compras" element={<CarrinhoCompras />} />
+      <Route path="resultado_pesquisa/:termosDaPesquisa" element={<Resultado_Pesquisa />} />
       <Route path="resultado_pesquisa" element={<Resultado_Pesquisa />} />
     </Routes>
   </BrowserRouter>,

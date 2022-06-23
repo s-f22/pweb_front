@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import jwtDecode from "jwt-decode";
 import logo from '../Assets/img/Books-logos/Books-logos_transparent.png'
@@ -13,6 +14,7 @@ import { useNavigate } from 'react-router-dom';
 
 function Cabecalho() {
     const navigate = useNavigate();
+    const [termosDaPesquisa, setTermosDaPesquisa] = useState('');
 
     const btnMobile = document.getElementById('btn_mobile');
     var LS = localStorage.getItem('usuario-login')
@@ -23,6 +25,8 @@ function Cabecalho() {
         navigate('/cadastro_usuario');
     }
 
+    
+
 
     return (
 
@@ -30,14 +34,16 @@ function Cabecalho() {
 
         <header id="header">
             <Link to="/"> <img id="logo" src={logo} alt="" /> </Link>
-            <Form className="d-flex Cabecalho_HeaderBusca">
+            <Form onSubmit={termosDaPesquisa} className="d-flex Cabecalho_HeaderBusca">
                 <FormControl
                     type="search"
-                    placeholder="Digite o nome do livro, ou autor"
+                    placeholder="Digite o título do livro"
                     className="me-2"
                     aria-label="Search"
+                    value={termosDaPesquisa} 
+                    onChange={(evt) => setTermosDaPesquisa(evt.target.value)}
                 />
-                <Link to="/resultado_pesquisa"><Button>Pesquisar</Button></Link>
+                <Link to={"/resultado_pesquisa/" + termosDaPesquisa} ><Button type="submit" >Pesquisar</Button></Link>
 
             </Form>
             <div className="Cabecalho_IconsDiv">

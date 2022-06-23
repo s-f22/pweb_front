@@ -9,5 +9,7 @@ namespace p2_PWEB_livraria.Interfaces
     interface ILivroRepository
     {
         List<Livro> ListarTodosOsLivros();
+
+        Livro ListarLivroPorId(int idLivro);
     }
 }

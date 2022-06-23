@@ -12,6 +12,11 @@ namespace p2_PWEB_livraria.Repositories
     {
         P2_PWEB_Livraria metodos = new P2_PWEB_Livraria();
 
+        public Livro ListarLivroPorId(int idLivro)
+        {
+            return metodos.Livros.FirstOrDefault(l => l.IdLivro == idLivro);
+        }
+
         public List<Livro> ListarTodosOsLivros()
         {
             return metodos.Livros.ToList();
