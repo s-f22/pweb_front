@@ -211,7 +211,7 @@ function Cadastro_Usuario() {
       .catch(() => {
         setMsgErro('Email e/ou senha invalidos');
         setIsLoading(false);
-        console.log(msgErro);
+        alert(msgErro);
       }
 
       );

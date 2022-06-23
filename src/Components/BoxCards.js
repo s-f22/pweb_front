@@ -1,3 +1,5 @@
+import React, { useState, useEffect } from "react";
+import axios from 'axios';
 
 import foto1 from '../Assets/img/foto1.jpg';
 import foto2 from '../Assets/img/foto2.jpg';
@@ -43,45 +45,53 @@ import CardProduto from '../Components/CardProduto';
 
 
 
-function BoxCards() {
+function BoxCards(props) {
 
-    // const [listaFotos, setlistaFotos] = useState([]);
+    var [listaLivros, setListaLivros] = useState(props.listaComTodosOsLivros);
+
+    useEffect(() => {
+        setListaLivros(props.listaComTodosOsLivros)
+        console.log(listaLivros)
+        return (
+            setListaLivros([])
+        )
+    }, []);
 
     return (
         <CardGroup expand="lg">
             <Container fluid className='CardsWrap'  >
-                <CardProduto imagem={foto1}/>
-                <CardProduto imagem={foto2}/>
-                <CardProduto imagem={foto3}/>
-                <CardProduto imagem={foto4}/>
-                <CardProduto imagem={foto5}/>
-                <CardProduto imagem={foto6}/>
-                <CardProduto imagem={foto7}/>
-                <CardProduto imagem={foto8}/>
-                <CardProduto imagem={foto9}/>
-                <CardProduto imagem={foto10}/>
-                <CardProduto imagem={foto11}/>
-                <CardProduto imagem={foto12}/>
-                <CardProduto imagem={foto13}/>
-                <CardProduto imagem={foto14}/>
-                <CardProduto imagem={foto15}/>
-                <CardProduto imagem={foto16}/>
-                <CardProduto imagem={foto17}/>
-                <CardProduto imagem={foto18}/>
-                <CardProduto imagem={foto19}/>
-                <CardProduto imagem={foto20}/>
-                <CardProduto imagem={foto21}/>
-                <CardProduto imagem={foto22}/>
-                <CardProduto imagem={foto23}/>
-                <CardProduto imagem={foto24}/>
-                <CardProduto imagem={foto25}/>
-                <CardProduto imagem={foto26}/>
-                <CardProduto imagem={foto27}/>
-                <CardProduto imagem={foto28}/>
-                <CardProduto imagem={foto29}/>
-                <CardProduto imagem={foto30}/>
-                <CardProduto imagem={foto31}/>
-                <CardProduto imagem={foto32}/>
+                <CardProduto imagem={foto1} />
+                <CardProduto imagem={foto2} />
+                <CardProduto imagem={foto3} />
+                <CardProduto imagem={foto4} />
+                <CardProduto imagem={foto5} />
+                <CardProduto imagem={foto6} />
+                <CardProduto imagem={foto7} />
+                <CardProduto imagem={foto8} />
+                <CardProduto imagem={foto9} />
+                <CardProduto imagem={foto10} />
+                <CardProduto imagem={foto11} />
+                <CardProduto imagem={foto12} />
+                <CardProduto imagem={foto13} />
+                <CardProduto imagem={foto14} />
+                <CardProduto imagem={foto15} />
+                <CardProduto imagem={foto16} />
+                <CardProduto imagem={foto17} />
+                <CardProduto imagem={foto18} />
+                <CardProduto imagem={foto19} />
+                <CardProduto imagem={foto20} />
+                <CardProduto imagem={foto21} />
+                <CardProduto imagem={foto22} />
+                <CardProduto imagem={foto23} />
+                <CardProduto imagem={foto24} />
+                <CardProduto imagem={foto25} />
+                <CardProduto imagem={foto26} />
+                <CardProduto imagem={foto27} />
+                <CardProduto imagem={foto28} />
+                <CardProduto imagem={foto29} />
+                <CardProduto imagem={foto30} />
+                <CardProduto imagem={foto31} />
+                <CardProduto imagem={foto32} />
             </Container>
         </CardGroup>
     );

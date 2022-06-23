@@ -146,6 +146,13 @@
   margin-left: .5rem;
   height: 2rem;
   filter: invert(31%) sepia(91%) saturate(524%) hue-rotate(149deg) brightness(96%) contrast(94%);
+  
+}
+.Cabecalho_FotoPerfil{
+  margin-left: .5rem;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
 }
 .Cabecalho_Corretor{
   padding-left: 0;

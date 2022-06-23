@@ -1,3 +1,6 @@
+import React, { useState, useEffect } from "react";
+import axios from 'axios';
+
 import oferta1 from '../Assets/img/oferta1.jpg'
 import oferta3 from '../Assets/img/oferta3.jpg'
 import oferta6 from '../Assets/img/oferta6.jpg'
@@ -12,6 +15,35 @@ import { Container, Row, Col, Carousel, Card } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 
 function Home_Vitrine() {
+
+  const [listaLivros, setListaLivros] = useState([]);
+
+  function CarregarLivros() {
+      
+      axios
+          ('http://localhost:5000/api/Livros',
+              // {
+              //     headers: { 'Authorization': 'Bearer ' + localStorage.getItem('usuario-login') }
+              // }
+          )
+          .then(response => {
+              if (response.status === 200) {
+                  setListaLivros(response.data)
+              }
+          })
+          .catch(erro => console.log(erro));
+          //console.log(listaLivros);
+  }
+
+
+  useEffect(() => {
+      CarregarLivros()
+      // return (
+      //     setListaLivros([])
+      // )
+  }, []);
+
+
   return (
     <div className='Home_Vitrine_Background'>
       <Cabecalho />
@@ -55,7 +87,7 @@ function Home_Vitrine() {
         </Carousel.Item>
       </Carousel>
 
-      <BoxCards />
+      <BoxCards listaComTodosOsLivros = {listaLivros} />
 
     </div>
   );
