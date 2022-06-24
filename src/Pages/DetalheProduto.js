@@ -36,25 +36,54 @@ function DetalheProduto() {
   }
 
 
+  // function AdicionarAoCarrinho() {
+
+  //     axios.put('http://localhost:5000/api/Carrinhos/' + idLivro,
+  //       { headers: { 'Authorization': 'Bearer ' + localStorage.getItem('usuario-login') } }
+  //     )
+  //       .then(response => {
+  //         if (response.status === 204) {
+
+  //           //window.location.reload();
+  //           console.log("Livro adicionado com sucesso ao carrinho")
+  //           //navigate('/carrinho_compras');
+  //         }
+  //       })
+  //       .catch(erro => console.log(erro));
+  // };
   function AdicionarAoCarrinho() {
 
-    console.log('http://localhost:5000/api/Carrinhos/' + idLivro)
-
-    axios.put('http://localhost:5000/api/Carrinhos/' + idLivro,
+    fetch('http://localhost:5000/api/Carrinhos/' + idLivro,
       {
-        headers: { 'Authorization': 'Bearer ' + localStorage.getItem('usuario-login') }
-      }
-    )
-      .then(response => {
-        if (response.status === 204) {
+        // Define o método da requisição ( PUT )
+        method: 'PUT',
 
-          //window.location.reload();
-          console.log("Livro adicionado com sucesso ao carrinho")
-          //navigate('/carrinho_compras');
+        // Define o corpo da requisição especificando o tipo ( JSON )
+        body: JSON.stringify({ idLivro: parseInt(idLivro) }),
+
+        // Define o cabeçalho da requisição
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: 'Bearer ' + localStorage.getItem('usuario-login'),
+        },
+      },
+    )
+      .then((resposta) => {
+        // Caso a requisição retorne um status code 204,
+        if (resposta.status === 204) {
+          BuscarLivroPorId();
+          console.log(
+            'deu certo essa bagaça'
+          );
         }
       })
-      .catch(erro => console.log(erro));
-  };
+
+      // caso ocorra algum erro, mostra no console do navegador.
+      .catch((erro) => console.log(erro))
+  }
+
+      
+  
 
 
 
@@ -63,7 +92,7 @@ function DetalheProduto() {
     return (
       setLivro({})
     )
-  }, [idLivro]);
+  }, []);
 
 
   return (
