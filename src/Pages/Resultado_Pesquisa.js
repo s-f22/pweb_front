@@ -3,7 +3,7 @@ import { Card } from 'react-bootstrap';
 
 import '../Assets/css/estilos.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import BoxPesquisa from '../Components/BoxPesquisa';
+
 import Cabecalho from '../Components/Cabecalho';
 import MenuCentral from '../Components/MenuCentral';
 import { Container, Row, Col, Carousel, CardGroup } from 'react-bootstrap';
@@ -15,7 +15,7 @@ import { Link, useParams } from "react-router-dom";
 import axios from 'axios';
 import { useState, useEffect } from "react";
 
-import CardProdutoPesquisa from '../Components/CardProdutoPesquisa';
+
 
 function Resultado_Pesquisa() {
 

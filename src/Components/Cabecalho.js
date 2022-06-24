@@ -20,12 +20,12 @@ function Cabecalho() {
     var LS = localStorage.getItem('usuario-login')
 
 
-    function Logout(){
+    function Logout() {
         localStorage.removeItem('usuario-login');
         navigate('/cadastro_usuario');
     }
 
-    
+
 
 
     return (
@@ -40,7 +40,7 @@ function Cabecalho() {
                     placeholder="Digite o título do livro"
                     className="me-2"
                     aria-label="Search"
-                    value={termosDaPesquisa} 
+                    value={termosDaPesquisa}
                     onChange={(evt) => setTermosDaPesquisa(evt.target.value)}
                     required
                 />
@@ -59,7 +59,17 @@ function Cabecalho() {
                     </button>
                     <ul className="Cabecalho_Corretor" id="menu">
                         <div className="Cabecalho_Links">
-                            <li><Link to="/carrinho_compras">Pedido<img className="Cabecalho_SVG" src={cart}></img></Link></li>
+
+                            
+                            {
+                                (LS === null)
+                                ?
+                                <li><Link to="/cadastro_usuario">Pedido<img className="Cabecalho_SVG" src={cart}></img></Link></li>
+                                :
+                                <li><Link to="/carrinho_compras">Pedido<img className="Cabecalho_SVG" src={cart}></img></Link></li>
+                            }
+
+
                             {
                                 (LS === null)
                                     ?

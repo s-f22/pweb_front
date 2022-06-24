@@ -13,5 +13,7 @@ namespace p2_PWEB_livraria.Interfaces
         void LimparCarrinho(int IdUsuarioLogado);
 
         List<Carrinho> ListarMeuCarrinho(int IdUsuarioLogado);
+
+        List<Carrinho> ListarTodosOsItensDoCarrinho();
     }
 }

@@ -1,16 +1,73 @@
-import krmz from '../Assets/img/krmz.jpg'
 
-import Image from 'react-bootstrap/Image'
 
+import jwtDecode from "jwt-decode";
+import axios from "axios";
 import '../Assets/css/estilos.css';
 import Cabecalho from '../Components/Cabecalho';
 import MenuCentral from '../Components/MenuCentral';
 
 import React, { useState, useEffect } from "react";
-import { Table, Row, Container, Col, Button, Modal } from 'react-bootstrap';
+import { Table, Row, Container, Button } from 'react-bootstrap';
 
 
 function CarrinhoCompras() {
+
+
+  const [meusLivros, setMeusLivros] = useState([]);
+ 
+  
+
+ 
+
+
+
+  function BuscarMeusLivros() {
+    axios
+      ('http://localhost:5000/api/Carrinhos',
+        {
+          headers: { 'Authorization': 'Bearer ' + localStorage.getItem('usuario-login') }
+        }
+      )
+      .then(response => {
+        if (response.status === 200) {
+          setMeusLivros(response.data)
+        }
+      })
+      .catch(erro => console.log(erro));
+  };
+
+
+  function LimparCarrinho() {
+    
+    axios.delete
+      ('http://localhost:5000/api/Carrinhos/' + jwtDecode(localStorage.getItem('usuario-login')).jti,
+        {
+          headers: { 'Authorization': 'Bearer ' + localStorage.getItem('usuario-login') }
+        }
+      )
+      .then(response => {
+        if (response.status === 204) {
+          
+          BuscarMeusLivros();
+          window.location.reload();
+          alert("Itens excluidos com sucesso");
+        }
+      })
+      .catch(erro => console.log(erro));
+  };
+
+
+
+
+  useEffect(() => {
+    BuscarMeusLivros()
+    return (
+      setMeusLivros([])
+    )
+  }, []);
+  
+
+
 
   return (
     <div className='CarrinhoCompras_BackGroud'>
@@ -28,33 +85,28 @@ function CarrinhoCompras() {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>Nome do livro</td>
-              <td>1</td>
-              <td>R$0,00</td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Nome do livro</td>
-              <td>1</td>
-              <td>R$0,00</td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Nome do livro</td>
-              <td>1</td>
-              <td>R$0,00</td>
-            </tr>
-            
+            {
+              meusLivros.map((livro) => {
+                
+                return (
+                  <tr>
+                    <td>{ livro.idLivro }</td>
+                    <td>{ livro.idLivroNavigation.titulo }</td>
+                    <td>{ livro.qtdeCompra }</td>
+                    <td>R${ livro.idLivroNavigation.precoUnitario }</td>
+                  </tr>
+                )
+              })
+            }
+
 
           </tbody>
 
         </Table>
-        <h3 className='CarrinhoCompras'>Total: R$0,00</h3>
+        <h3 className='CarrinhoCompras'>Total: R${ meusLivros.reduce( (prevVal, elem) => prevVal + elem.valorTotal, 0 ) }</h3>
         <Row>
           <Button variant="outline-success">Finalizar pedido</Button>
-          <Button variant="outline-secondary" >Limpar carrinho</Button>
+          <Button  onClick={() => LimparCarrinho()} variant="outline-secondary" >Limpar carrinho</Button>
         </Row>
       </Container>
     </div>

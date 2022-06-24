@@ -41,8 +41,8 @@ namespace p2_PWEB_livraria.Controllers
             }
         }
 
-        //[HttpDelete( "{idUsuario}" )]
-        [HttpDelete]
+        [HttpDelete( "{idUsuario}" )]
+        //[HttpDelete]
         public IActionResult LimparCarrinho()
         {
             _carrinhoRepository.LimparCarrinho(Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value));
@@ -51,7 +51,7 @@ namespace p2_PWEB_livraria.Controllers
 
 
 
-        [HttpPut("{ idLivro }") ]
+        [HttpPut("{idLivro}")]
         public IActionResult AdicionarLivroAomEuCarrinho(int idLivro)
         {
             _carrinhoRepository.AdicionarLivroAoMeuCarrinho(idLivro, Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value));

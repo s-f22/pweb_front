@@ -1,4 +1,5 @@
-﻿using p2_PWEB_livraria.Contexts;
+﻿using Microsoft.EntityFrameworkCore;
+using p2_PWEB_livraria.Contexts;
 using p2_PWEB_livraria.Domains;
 using p2_PWEB_livraria.Interfaces;
 using System;
@@ -21,23 +22,27 @@ namespace p2_PWEB_livraria.Repositories
             //cria um novo livro com o id de referencia recebido
             Livro novoLivro = metodos.Livros.FirstOrDefault(l => l.IdLivro == idLivro);
 
-            //carrefa as infos do usuario logado
+            //carrega as infos do usuario logado
             Usuario usuarioAtual = metodos.Usuarios.FirstOrDefault(u => u.IdUsuario == idUsuarioLogado);
+
+
 
             //verifica se o livro a adicionar ja existe na lista na lista de itens (carrinho) do usuario atual;
             //se nao existir, cria e acrescenta
             //se existir, soma 1 a qtde total e soma o valor de mais uma unidade
             if (meusItensNoCarrinho.Find(b => b.IdLivro == novoLivro.IdLivro) == null)
             {
-                Carrinho novoItem = new Carrinho()
-                {
-                    IdLivro = novoLivro.IdLivro,
-                    IdUsuario = usuarioAtual.IdUsuario,
-                    QtdeCompra = 1,
-                    ValorTotal = novoLivro.PrecoUnitario,
-                    DataAcesso = DateTime.Now
-                };
-                meusItensNoCarrinho.Add(novoItem);
+                Carrinho novoItem = new Carrinho();
+
+                novoItem.IdLivro = novoLivro.IdLivro;
+                novoItem.IdUsuario = usuarioAtual.IdUsuario;
+                novoItem.QtdeCompra = 1;
+                novoItem.ValorTotal = novoLivro.PrecoUnitario;
+                novoItem.DataAcesso = DateTime.Now;
+
+                metodos.Carrinhos.Add(novoItem);
+                //meusItensNoCarrinho.Add(novoItem);
+               
             }
             else
             {
@@ -58,16 +63,24 @@ namespace p2_PWEB_livraria.Repositories
             {
                 item.QtdeCompra = 0;
                 item.ValorTotal = 0;
-                item.DataAcesso = DateTime.Now;
+               item.DataAcesso = DateTime.Now;
             }
 
             metodos.SaveChanges();
         }
 
+        
+
         public List<Carrinho> ListarMeuCarrinho(int IdUsuarioLogado)
         {
 
-            return metodos.Carrinhos.Where(c => c.IdUsuario == IdUsuarioLogado).ToList();
+            //return metodos.Carrinhos.Where(c => c.IdUsuario == IdUsuarioLogado && c.QtdeCompra > 0).ToList();
+            return metodos.Carrinhos.Include(l => l.IdLivroNavigation).Where(c => c.IdUsuario == IdUsuarioLogado && c.QtdeCompra > 0).ToList();
+        }
+
+        public List<Carrinho> ListarTodosOsItensDoCarrinho()
+        {
+            return metodos.Carrinhos.ToList();
         }
     }
 }
