@@ -42,6 +42,7 @@ function Cabecalho() {
                     aria-label="Search"
                     value={termosDaPesquisa} 
                     onChange={(evt) => setTermosDaPesquisa(evt.target.value)}
+                    required
                 />
                 <Link to={"/resultado_pesquisa/" + termosDaPesquisa} ><Button type="submit" >Pesquisar</Button></Link>
 

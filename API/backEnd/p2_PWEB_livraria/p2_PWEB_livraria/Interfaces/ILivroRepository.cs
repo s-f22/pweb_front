@@ -11,5 +11,7 @@ namespace p2_PWEB_livraria.Interfaces
         List<Livro> ListarTodosOsLivros();
 
         Livro ListarLivroPorId(int idLivro);
+
+        List<Livro> BuscarLivrosPorTitulo(string tituloLivro);
     }
 }
