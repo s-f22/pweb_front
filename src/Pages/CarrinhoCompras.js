@@ -93,7 +93,7 @@ function CarrinhoCompras() {
                     <td>{ livro.idLivro }</td>
                     <td>{ livro.idLivroNavigation.titulo }</td>
                     <td>{ livro.qtdeCompra }</td>
-                    <td>R${ livro.idLivroNavigation.precoUnitario }</td>
+                    <td>R${ livro.idLivroNavigation.precoUnitario.toFixed(2) }</td>
                   </tr>
                 )
               })
@@ -103,7 +103,7 @@ function CarrinhoCompras() {
           </tbody>
 
         </Table>
-        <h3 className='CarrinhoCompras'>Total: R${ meusLivros.reduce( (prevVal, elem) => prevVal + elem.valorTotal, 0 ) }</h3>
+        <h3 className='CarrinhoCompras'>Total: R${ meusLivros.reduce( (prevVal, elem) => prevVal + elem.valorTotal, 0 ).toFixed(2) }</h3>
         <Row>
           <Button variant="outline-success">Finalizar pedido</Button>
           <Button  onClick={() => LimparCarrinho()} variant="outline-secondary" >Limpar carrinho</Button>

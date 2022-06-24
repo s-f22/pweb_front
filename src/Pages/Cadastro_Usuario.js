@@ -13,6 +13,17 @@ import { useNavigate } from 'react-router-dom';
 
 function MyVerticallyCenteredModal(props) {
 
+  const [email, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
+  const [nome, setNome] = useState('');
+  const [cpf, setCPF] = useState('');
+  const [telefone, setTelefone] = useState('');
+  const [dataNasc, setDataNasc] = useState(new Date());
+  const [msgErro, setMsgErro] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+
+
+
   //validação de email
   const [emailError, setEmailError] = useState('')
   const validateEmail = (e) => {
@@ -54,20 +65,63 @@ function MyVerticallyCenteredModal(props) {
   }
 
 
-  const validarSenha = (j) => {
-    var key2 = j.target.value;
-    console.log(key2);
+  // const validarSenha = (j) => {
+  //   var key2 = j.target.value;
+  //   console.log(key2);
 
-    if (key2 !== { senha1 }) {
-      setsenhaError('As senhas não conferem. Por favor, verifique.');
-    } else if (key2 == { senha1 }) {
-      setsenhaError('Senha válida');
-    } else if (key2 === '') {
-      setsenhaError('')
-    }
+  //   if (key2 !== { senha1 }) {
+  //     setsenhaError('As senhas não conferem. Por favor, verifique.');
+  //   } else if (key2 == { senha1 }) {
+  //     setsenhaError('Senha válida');
+  //   } else if (key2 === '') {
+  //     setsenhaError('')
+  //   }
+  // }
 
 
 
+  function CadastrarUsuario(novoUsuario) {
+
+    setIsLoading(true);
+
+    novoUsuario.preventDefault();
+
+    let usuario = {
+      nome: nome,
+      dataNascimento: dataNasc,
+      cpf: cpf,
+      telefone: telefone,
+      email: email,
+      senha: senha
+    };
+
+    axios.post('http://localhost:5000/api/Usuarios', usuario
+      // {
+      //     headers: { 'Authorization': 'Bearer ' + localStorage.getItem('usuario-login') }
+      // }
+    )
+      .then(resposta => {
+        if (resposta.status === 201) {
+          console.log("Usuario cadastrado com sucesso!");
+          setNome('');
+          setDataNasc(new Date());
+          setCPF('');
+          setTelefone('');
+          setSenha('');
+          setEmail('');
+          setIsLoading(false);
+          alert("Usuario Cadastrado com Sucesso!")
+        }
+      })
+      .catch(
+        erro => console.log(erro, "DEU RUIM"), setNome(''),
+        setDataNasc(new Date()),
+        setCPF(''),
+        setTelefone(''),
+        setSenha(''),
+        setEmail(''),
+        setIsLoading(false),
+      );
   }
 
 
@@ -86,8 +140,8 @@ function MyVerticallyCenteredModal(props) {
       </Modal.Header>
       <Modal.Body>
         <h4>Informe seus dados abaixo:</h4>
-        <Form>
-          <Form.Group className="mb-3" controlId="formBasicNome">
+        <Form onSubmit={CadastrarUsuario}>
+          <Form.Group className="mb-3" controlId="formBasicNome" value={nome} onChange={(evt) => setNome(evt.target.value)}>
             <Form.Label>Nome</Form.Label>
             <Form.Control required minLength={3} onBlur={(e) => validateNome(e)} type="name" placeholder="Insira seu nome completo" />
             <span style={{
@@ -95,12 +149,12 @@ function MyVerticallyCenteredModal(props) {
               color: 'red',
             }}>{nomeError}</span>
           </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicCPF">
+          <Form.Group className="mb-3" controlId="formBasicCPF" value={cpf} onChange={(evt) => setCPF(evt.target.value)}>
             <Form.Label>CPF</Form.Label>
             <Form.Control type="name" placeholder="(somente numeros)" />
 
           </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Group className="mb-3" controlId="formBasicEmail" value={email} onChange={(evt) => setEmail(evt.target.value)}>
             <Form.Label>Email</Form.Label>
             <Form.Control onBlur={(e) => validateEmail(e)} type="email" placeholder="Insira seu endereço de email" />
             <span style={{
@@ -114,15 +168,16 @@ function MyVerticallyCenteredModal(props) {
 
           <Row>
             <Col>
-              <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Group className="mb-3" controlId="formBasicPassword" value={senha} onChange={(evt) => setSenha(evt.target.value)}>
                 <Form.Label>Senha</Form.Label>
                 <Form.Control onChangeCapture={(i) => preencherSenha1(i)} type="password" placeholder="(Mínimo de 8 caracteres)" />
               </Form.Group>
             </Col>
             <Col>
-              <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Group className="mb-3" controlId="formBasicPassword" value={senha1} onChange={(evt) => setSenha1(evt.target.value)}>
                 <Form.Label>Confirmação</Form.Label>
-                <Form.Control onBlur={(j) => validarSenha(j)} type="password" placeholder="Redigite a senha" />
+                {/* <Form.Control onBlur={(j) => validarSenha(j)} type="password" placeholder="Redigite a senha" /> */}
+                <Form.Control type="password" placeholder="Redigite a senha" />
                 <span style={{
                   fontWeight: 'bold',
                   color: 'red',
@@ -133,7 +188,7 @@ function MyVerticallyCenteredModal(props) {
           <Form.Group className="mb-3" controlId="formBasicCheckbox">
             <Form.Check type="checkbox" label="Desejo receber promoções via email" />
           </Form.Group>
-          <Button variant="primary" type="submit">
+          <Button variant="primary" type="submit" disabled={ isLoading ? true : false }>
             Cadastrar
           </Button>
         </Form>
@@ -239,7 +294,7 @@ function Cadastro_Usuario() {
                 <Form.Control type="password" placeholder="Password" />
               </FloatingLabel>
               <div className='CadastroUsuario_BotoesEsq'>
-                <Button variant="primary" type="submit" disabled={ isLoading ? true : false }>
+                <Button variant="primary" type="submit" disabled={isLoading ? true : false}>
                   Entrar
                 </Button>
 
