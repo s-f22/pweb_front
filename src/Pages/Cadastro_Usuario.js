@@ -168,6 +168,26 @@ function MyVerticallyCenteredModal(props) {
 
           <Row>
             <Col>
+              <Form.Group className="mb-3" controlId="formBasicDataNascimento" value={dataNasc} onChange={(evt) => setDataNasc(evt.target.value)}>
+                <Form.Label>Data de Nascimento</Form.Label>
+                <Form.Control  type="date" placeholder="" />
+              </Form.Group>
+            </Col>
+            <Col>
+              <Form.Group className="mb-3" controlId="formBasicTelefone" value={telefone} onChange={(evt) => setTelefone(evt.target.value)}>
+                <Form.Label>Telefone</Form.Label>
+                {/* <Form.Control onBlur={(j) => validarSenha(j)} type="password" placeholder="Redigite a senha" /> */}
+                <Form.Control type="text" placeholder="(somente numeros)" />
+                <span style={{
+                  fontWeight: 'bold',
+                  color: 'red',
+                }}>{senhaError}</span>
+              </Form.Group>
+            </Col>
+          </Row>
+
+          <Row>
+            <Col>
               <Form.Group className="mb-3" controlId="formBasicPassword" value={senha} onChange={(evt) => setSenha(evt.target.value)}>
                 <Form.Label>Senha</Form.Label>
                 <Form.Control onChangeCapture={(i) => preencherSenha1(i)} type="password" placeholder="(Mínimo de 8 caracteres)" />
