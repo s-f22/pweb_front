@@ -32,5 +32,24 @@ namespace p2_PWEB_livraria.Controllers
             return StatusCode(201);
         }
 
+
+        [HttpPost("RecuperarSenhaEnviar/{email}")]
+        public IActionResult EnviaEmail(string email)
+        {
+            try
+            {
+                _usuarioRepository.EnviaEmailRecSenha(email);
+                return Ok(new
+                {
+                    Mensagem = "Código enviado"
+                });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex);
+                throw;
+            }
+        }
+
     }
 }

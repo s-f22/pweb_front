@@ -72,6 +72,8 @@ function DetalheProduto() {
         // Caso a requisição retorne um status code 204,
         if (resposta.status === 204) {
           BuscarLivroPorId();
+          
+          navigate('/carrinho_compras');
           console.log(
             'deu certo essa bagaça'
           );
@@ -82,8 +84,8 @@ function DetalheProduto() {
       .catch((erro) => console.log(erro))
   }
 
-      
-  
+
+
 
 
 
@@ -144,7 +146,7 @@ function DetalheProduto() {
                   ?
                   <li><Link to="/cadastro_usuario"><Button>Comprar</Button></Link></li>
                   :
-                  <li><Link to="/carrinho_compras"><Button onClick={() => AdicionarAoCarrinho()} >Comprar</Button></Link></li>
+                  <li><Button onClick={() => AdicionarAoCarrinho()} >Comprar</Button></li>
               }
 
             </div>

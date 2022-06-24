@@ -295,6 +295,10 @@ function Cadastro_Usuario() {
 
 
 
+  
+
+
+
 
   return (
     <div className='CadastroUsuarioBackgroundImage' >

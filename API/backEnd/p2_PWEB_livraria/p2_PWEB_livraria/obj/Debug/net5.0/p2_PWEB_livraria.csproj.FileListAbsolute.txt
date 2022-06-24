@@ -134,3 +134,6 @@ D:\FATEC\3\PWeb\pweb_p1_p2\API\backEnd\p2_PWEB_livraria\p2_PWEB_livraria\obj\Deb
 D:\FATEC\3\PWeb\pweb_p1_p2\API\backEnd\p2_PWEB_livraria\p2_PWEB_livraria\obj\Debug\net5.0\p2_PWEB_livraria.xml
 D:\FATEC\3\PWeb\pweb_p1_p2\API\backEnd\p2_PWEB_livraria\p2_PWEB_livraria\obj\Debug\net5.0\p2_PWEB_livraria.pdb
 D:\FATEC\3\PWeb\pweb_p1_p2\API\backEnd\p2_PWEB_livraria\p2_PWEB_livraria\obj\Debug\net5.0\p2_PWEB_livraria.genruntimeconfig.cache
+D:\FATEC\3\PWeb\pweb_p1_p2\API\backEnd\p2_PWEB_livraria\p2_PWEB_livraria\bin\Debug\net5.0\MailKit.dll
+D:\FATEC\3\PWeb\pweb_p1_p2\API\backEnd\p2_PWEB_livraria\p2_PWEB_livraria\bin\Debug\net5.0\MimeKit.dll
+D:\FATEC\3\PWeb\pweb_p1_p2\API\backEnd\p2_PWEB_livraria\p2_PWEB_livraria\bin\Debug\net5.0\BouncyCastle.Crypto.dll

@@ -18,7 +18,7 @@ namespace p2_PWEB_livraria.Interfaces
         
         Usuario ValidarEmailSenha(string email, string senha);
 
-
+        public void EnviaEmailRecSenha(string email);
 
         //List<Livro> ListarMeusLivros(int idUsuarioLogado);
 
